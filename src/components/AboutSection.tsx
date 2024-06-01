@@ -5,6 +5,11 @@ import TabButton from "@/components/TabButton";
 import { CardContainer, CardItem, CardBody } from "./ui/3d-card";
 import { BoxesCore, Boxes } from "./ui/background-boxes";
 
+const openProject = () => {
+  const project_url = "https://storyandverse.netlify.app/"
+  window.open(project_url, "_blank");
+}
+
 
 const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
   const button = event.currentTarget;
@@ -115,6 +120,7 @@ const AboutSection: FC = () => {
       />
     </CardItem>
     <div className="flex justify-between items-center mt-20">
+      <button onClick={openProject}>
       <CardItem
         translateZ={20}
         translateX={-40}
@@ -123,6 +129,7 @@ const AboutSection: FC = () => {
       >
         Check it out →
       </CardItem>
+      </button>
       <CardItem
         translateZ={20}
         translateX={40}
