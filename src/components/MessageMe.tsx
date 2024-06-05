@@ -1,10 +1,8 @@
-"use client";
-
-import React, { useState } from 'react';
+"use client"
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { motion } from "framer-motion";
-import { HeroHighlight, Highlight } from "./ui/hero-highlight"; 
+import { Highlight,HeroHighlight } from './ui/hero-highlight';
 
 const Container = styled.div`
   padding: 20px;
@@ -100,29 +98,43 @@ const ErrorMessage = styled.p`
   color: #dc3545;
 `;
 
-const MessageMe = () => {
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const MessageMe: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [responseMessage, setResponseMessage] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const handleSubmit = async (e:any) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:3000/api/backend/contact", { name, email, message });
-      if (response.status === 201) {
-        alert('Form submitted successfully!');
-        setName('');
-        setEmail('');
-        setMessage('');
-      } else {
-        alert('Failed to submit form. Please try again later.');
-      }
-    } catch (error) {
-      console.log(error);
-    }
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/api/messages', formData);
+      console.log(response.data);
+      setResponseMessage('Message sent successfully!');
+      setErrorMessage('');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting message:', error);
+      setResponseMessage('');
+      setErrorMessage('Failed to send message. Please try again later.');
+    }
+  };
 
   return (
     <Container>
