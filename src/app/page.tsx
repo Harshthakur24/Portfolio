@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import Navbar from "@/components/Navbar";
 import { Skills } from "@/components/Skills";
+import MessageMe from "@/components/MessageMe";
 
 
 
@@ -17,6 +18,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <Skills/>
+        <MessageMe/>
         
       </div>
       <Footer/>
