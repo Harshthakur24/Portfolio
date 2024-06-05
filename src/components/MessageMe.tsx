@@ -137,14 +137,11 @@ const MessageMe: React.FC = () => {
   };
 
   return (
-    <div className='ml-[257px]'>
-    <Container >
+    <Container>
         
       <Title className='text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto'>
-        <Highlight>
-        <Highlight className=" -ml-[320px] text-black dark:text-black">
+        <Highlight className="text-black dark:text-black">
             Message Me
-        </Highlight>
         </Highlight>
         </Title>
       <Form onSubmit={handleSubmit}>
@@ -190,7 +187,6 @@ const MessageMe: React.FC = () => {
         <Button type="submit">Send</Button>
       </Form>
     </Container>
-    </div>
   );
 };
 
