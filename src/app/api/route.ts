@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
 
 // MongoDB connection URI
-const MONGODB_URI = "mongodb+srv://thakur2004harsh:kcQRjQhAF2THwk4J@usermessage.8c8i1sq.mongodb.net/?retryWrites=true&w=majority&appName=UserMessage";
+const MONGODB_URI = "mongodb+srv://thakur2004harsh:ZH7bsYIopVvPxEy7@cluster0.nrlnf26.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 ///dZyLZXJ1p2byATYb
 // Define the interface for the message document
 interface IMessage extends Document {
