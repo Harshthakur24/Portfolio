@@ -1,7 +1,42 @@
-// pages/api/messages.ts
+import mongoose, { Document, Model } from 'mongoose';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { MongoClient } from 'mongodb';
 
+const MONGODB_URI = 'mongodb+srv://thakur2004harsh:ZH7bsYIopVvPxEy7@cluster0.nrlnf26.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+interface IMessage extends Document {
+  name: string;
+  email: string;
+  message: string;
+  createdAt: Date;
+}
+
+const messageSchema = new mongoose.Schema<IMessage>({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  message: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+// Define MongoDB model
+const Message: Model<IMessage> = mongoose.models.Message || mongoose.model<IMessage>('Message', messageSchema);
+
+// Connect to MongoDB
+mongoose.connect(MONGODB_URI).then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+// Define API route handler
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
@@ -12,20 +47,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     try {
-      // Connect to MongoDB
-      const client = new MongoClient('mongodb+srv://thakur2004harsh:Jamthakurharsh2004@cluster0.okp1ife.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-      });
-      await client.connect();
-
-      // Insert the message into the database
-      const db = client.db();
-      const collection = db.collection('messages');
-      await collection.insertOne({ name, email, message, createdAt: new Date() });
-
-      // Close the MongoDB connection
-      await client.close();
-
-      // Send a success response
+      const newMessage = new Message({ name, email, message });
+      await newMessage.save();
       res.status(201).json({ message: 'Message sent successfully' });
     } catch (error) {
       console.error('MongoDB Error:', error);

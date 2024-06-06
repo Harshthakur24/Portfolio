@@ -124,7 +124,8 @@ const MessageMe: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/messages', formData);
+
+      const response = await axios.post('/api', formData);
       console.log(response.data);
       setResponseMessage('Message sent successfully!');
       setErrorMessage('');
@@ -144,7 +145,7 @@ const MessageMe: React.FC = () => {
             Message Me
         </Highlight>
         </Title>
-      <Form onSubmit={handleSubmit}>
+      <Form >
         <InputContainer>
           <Label className='text-5xl' htmlFor="name">
         <p className=' -ml-[357px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[27px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center '>Hello Harsh, My name is...</p>
@@ -184,7 +185,7 @@ const MessageMe: React.FC = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
           ></textarea>
         </InputContainer>
-        <Button type="submit">Send</Button>
+        <Button type="submit" onClick={handleSubmit}>Send</Button>
       </Form>
     </Container>
   );

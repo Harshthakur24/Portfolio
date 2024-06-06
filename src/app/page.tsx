@@ -5,9 +5,6 @@ import Navbar from "@/components/Navbar";
 import { Skills } from "@/components/Skills";
 import MessageMe from "@/components/MessageMe";
 
-
-
-
 export default function Home() {
 
   return (
