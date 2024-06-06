@@ -123,7 +123,7 @@ const MessageMe: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/api/", formData);
+      const response = await axios.post("https://portfolio-nine-blue-38.vercel.app/api", formData);
       if (response.status === 201) {
         setResponseMessage("Message sent successfully!");
         setErrorMessage("");
