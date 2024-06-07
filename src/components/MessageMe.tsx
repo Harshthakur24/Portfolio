@@ -192,7 +192,7 @@ const MessageMe: React.FC = () => {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
           ></Textarea>
         </InputContainer>
-        <Button type="submit">Send</Button>
+        <Button className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline"type="submit">Send</Button>
       </Form>
       {responseMessage && <ResponseMessage>{responseMessage}</ResponseMessage>}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}

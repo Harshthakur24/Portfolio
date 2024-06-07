@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
 
-// MongoDB connection URI
+
 const MONGODB_URI = "mongodb+srv://thakur2004harsh:ZH7bsYIopVvPxEy7@cluster0.nrlnf26.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-///dZyLZXJ1p2byATYb
-// Define the interface for the message document
+
 interface IMessage extends Document {
   name: string;
   email: string;
@@ -12,7 +11,7 @@ interface IMessage extends Document {
   createdAt: Date;
 }
 
-// Define the schema for the message document
+
 const messageSchema = new mongoose.Schema<IMessage>({
   name: {
     type: String,
@@ -32,7 +31,7 @@ const messageSchema = new mongoose.Schema<IMessage>({
   },
 });
 
-// Prevent model overwrite error in Next.js hot reloading
+
 let Message: Model<IMessage>;
 try {
   Message = mongoose.model<IMessage>("Message");
@@ -40,7 +39,7 @@ try {
   Message = mongoose.model<IMessage>("Message", messageSchema);
 }
 
-// Connect to MongoDB if not already connected
+
 if (!mongoose.connections[0].readyState) {
   mongoose
     .connect(MONGODB_URI)
