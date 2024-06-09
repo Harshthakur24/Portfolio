@@ -5,7 +5,7 @@ import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 const skills:any = {
   "Languages": ["JavaScript", "TypeScript", "C++", "Python", "Java"],
   "Web Development": ["HTML", "CSS", "Node.js", "Express.js", "React.js", "Next.js", "Typescript", "Tailwind CSS","Socket.IO", "Redis"],
-  "Databases": ["MongoDB", "MySQL"],
+  "Databases": ["MongoDB", "MySQL", "PostgreSQL"],
   "Softwares": ["Postman", "Figma", "Docker"]
 };
 
@@ -28,14 +28,19 @@ export function Skills(): JSX.Element {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
+        
         className=" text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
       >
-        These are the skills I have
+        
+        <div className="text-white">These are the skills I have </div>
+        
         {" "}
-        <Highlight className="text-black dark:text-white">
+        
+        <Highlight className="text-black dark:text-black">
         learned in my coding journey
         </Highlight>
      </motion.h1>
+     
       
     </HeroHighlight>
     </div>
