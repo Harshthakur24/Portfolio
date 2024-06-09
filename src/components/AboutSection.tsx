@@ -4,18 +4,32 @@ import Image from "next/image";
 import TabButton from "@/components/TabButton";
 import { CardContainer, CardItem, CardBody } from "./ui/3d-card";
 import { BoxesCore, Boxes } from "./ui/background-boxes";
+import { motion } from "framer-motion";
 
 const openProject = () => {
   const project_url = "https://storyandverse.netlify.app/"
   window.open(project_url, "_blank");
 }
 
+const LikeButton = () => {
+  const [liked, setLiked] = useState(false);
+
+  const toggleLike = () => {
+    setLiked((prevLiked) => !prevLiked);
+  };
+}
+
+
 
 const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+
   const button = event.currentTarget;
   button.classList.toggle('text-red-500'); 
   button.classList.remove('text-green-500'); 
 };
+
+
+
 interface TabData {
   title: string;
   id: string;
@@ -67,6 +81,7 @@ const TAB_DATA: TabData[] = [
 ];
 
 const AboutSection: FC = () => {
+  const [Liked, setLinked] = useState<boolean>(false)
   const [tab, setTab] = useState<string>("skills");
   const [isPending, startTransition] = useTransition();
 
@@ -118,9 +133,12 @@ const AboutSection: FC = () => {
         className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
         alt="thumbnail"
       />
+
     </CardItem>
     <div className="flex justify-between items-center mt-20">
+    <motion.div whileHover={{ scale: 1.2 }} >
       <button onClick={openProject}>
+      
       <CardItem
         translateZ={20}
         translateX={-40}
@@ -129,22 +147,31 @@ const AboutSection: FC = () => {
       >
         Check it out →
       </CardItem>
+    
+      
       </button>
+      </motion.div>
+      
+      <motion.div whileHover={{ scale: 1.2 }} >
       <CardItem
         translateZ={20}
         translateX={40}
         as="button"
         className="px-4 py-2 rounded-xl bg-black dark:bg-blue-800 dark:text-black text-blue-400 text-xs font-bold"
       >
+        
         <button
       id="likeButton"
       className="transition-transform transition-color transform hover:scale-110 hover:text-blue-500"
       onClick={handleClick}
     >
-      Liked it ❤️
+      
+      Like it ❤️
     </button>
+    
   
       </CardItem>
+      </motion.div>
     </div>
   </CardBody>
 </CardContainer>

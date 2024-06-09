@@ -6,7 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import Navbar from '@/components/Navbar';
 import { Skills } from '@/components/Skills';
 import MessageMe from '@/components/MessageMe';
-import LoadingSpinner from '@/components/LoadingSpinner'; // Assuming you have a LoadingSpinner component
+import LoadingSpinner from '@/components/LoadingSpinner'; 
 
 export default function Home() {
   const [loading, setLoading] = useState(true);

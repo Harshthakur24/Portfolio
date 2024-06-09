@@ -221,7 +221,7 @@ const SpinningLoader = () => {
     
 </div>
 <p className="absolute inset-0 top-[240px] left-[40px] flex justify-center items-center text-2xl md:text-3xl lg:text-lg font-bold text-white">
-                Hold up! Loading a beautiful website for you ❤️
+                Hold up! Preparing a beautiful website for you ❤️
             </p>
         </div>
        

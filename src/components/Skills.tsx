@@ -4,8 +4,8 @@ import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 
 const skills:any = {
   "Languages": ["JavaScript", "TypeScript", "C++", "Python", "Java"],
-  "Web Development": ["HTML", "CSS", "Node.js", "Express.js", "React.js", "Next.js", "Typescript", "Tailwind CSS","Socket.IO", "Redis"],
-  "Databases": ["MongoDB", "MySQL", "PostgreSQL"],
+  "Web Development": ["HTML", "CSS", "Node.js", "Express.js", "React.js", "Next.js", "Typescript", "Tailwind CSS","Socket.IO", "NextAuth.js"],
+  "Databases": ["MongoDB", "MySQL", "PostgreSQL", "Redis"],
   "Softwares": ["Postman", "Figma", "Docker"]
 };
 
