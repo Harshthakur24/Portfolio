@@ -65,16 +65,29 @@ const CARDS = [
       </p>
     ),
   },
-
   {
     id: 3,
+    name: "Kanika Sharma",
+    designation: "Full Stack Developer",
+    content: (
+      <p>
+        Nice overall UI and beautiful components{" "}
+        <Highlight>
+        Nice!
+        </Highlight>
+      </p>
+    ),
+  },
+
+  {
+    id: 4,
     name: "Aryan Pandey",
     designation: "Full Stack Developer",
     content: (
       <p>
         Really liked this portfolio and your hackathon project too,{" "}
         <Highlight>
-        Nice!
+        Keep it up!
         </Highlight>
       </p>
     ),
