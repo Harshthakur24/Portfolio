@@ -4,7 +4,7 @@ import { Highlight } from "./ui/hero-highlight";
 
 const SpinningLoader = () => {
     return (
-        <div className="flex justify-center items-center h-screen">
+        <div className="flex justify-center items-center h-screen bg-black">
         <div className="flex justify-center items-center h-screen">
             <style>{`
             .boxes {
