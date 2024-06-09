@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2200); 
+    }, 2400); 
 
     return () => clearTimeout(timeout);
   }, []);
