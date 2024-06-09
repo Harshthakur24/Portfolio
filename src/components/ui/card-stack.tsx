@@ -20,7 +20,7 @@ export const CardStack = ({
   offset?: number;
   scaleFactor?: number;
 }) => {
-  const CARD_OFFSET = offset || 10;
+  const CARD_OFFSET = offset || 8;
   const SCALE_FACTOR = scaleFactor || 0.06;
   const [cards, setCards] = useState<Card[]>(items);
 
