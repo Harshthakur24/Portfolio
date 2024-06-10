@@ -109,7 +109,7 @@ const CARDS = [
   {
     id: 6,
     name: "Katherine",
-    designation: "App Developer",
+    designation: "Blockchain Developer",
     content: (
       <p>
         Really saw something new this time,
