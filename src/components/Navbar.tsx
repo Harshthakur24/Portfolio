@@ -17,8 +17,8 @@ const navLinks: NavLinkType[] = [
     path: "#about",
   },
   {
-    title: "Projects",
-    path: "#projects",
+    title: "Skills",
+    path: "#skills",
   },
   {
     title: "Contact",
@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
     const targetElement = document.querySelector(path);
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.getBoundingClientRect().top + window.scrollY - 70, // Adjust for fixed navbar
+        top: targetElement.getBoundingClientRect().top + window.scrollY - 70, 
         behavior: "smooth",
       });
     }

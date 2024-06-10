@@ -140,7 +140,8 @@ const MessageMe: React.FC = () => {
   };
 
   return (
-    <Container>
+    <div id="contact">
+    <Container >
       <Title className="text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto">
         <Highlight className="text-black dark:text-black">Message Me</Highlight>
       </Title>
@@ -197,6 +198,7 @@ const MessageMe: React.FC = () => {
       {responseMessage && <ResponseMessage>{responseMessage}</ResponseMessage>}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </Container>
+    </div>
   );
 };
 

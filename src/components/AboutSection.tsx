@@ -92,7 +92,7 @@ const AboutSection: FC = () => {
   };
 
   return (
-    <section className="text-white" id="about">
+    <section className="text-white" >
       <div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
       <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
  
@@ -104,7 +104,7 @@ const AboutSection: FC = () => {
        - Harsh (tbh not me)
       </p>
     </div>
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div id="about" className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
       <CardContainer className="inter-var">
   <CardBody className="bg-gradient-to-br from-blue-500 to-blue-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
     <CardItem
@@ -135,7 +135,7 @@ const AboutSection: FC = () => {
       />
 
     </CardItem>
-    <div className="flex justify-between items-center mt-20">
+    <div   className="flex justify-between items-center mt-20">
     <motion.div whileHover={{ scale: 1.2 }} >
       <button onClick={openProject}>
       
@@ -198,11 +198,12 @@ const AboutSection: FC = () => {
               </TabButton>
             ))}
           </div>
-          <div className="mt-8">
+          <div  className="mt-8">
             {TAB_DATA.find((t) => t.id === tab)?.content}
           </div>
         </div>
       </div>
+      <div id="skills"></div>
     </section>
   );
 };
