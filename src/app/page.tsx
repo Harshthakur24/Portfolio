@@ -21,6 +21,8 @@ export default function Home() {
   }, []);
 
   return (
+    <div>
+      <link rel="icon" href="logo.png"/>
     <>
       {loading ? (
         <LoadingSpinner /> 
@@ -45,6 +47,7 @@ export default function Home() {
         </main>
       )}
     </>
+    </div>
   );
 }
 

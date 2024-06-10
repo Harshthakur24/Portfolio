@@ -71,16 +71,29 @@ const CARDS = [
     designation: "Full Stack Developer",
     content: (
       <p>
-        Nice overall UI and beautiful components{" "}
+        Good overall UI and beautiful components{" "}
         <Highlight>
         Nice!
         </Highlight>
       </p>
     ),
   },
-
   {
     id: 4,
+    name: "Vansh Nagpal",
+    designation: "Full Stack Developer",
+    content: (
+      <p>
+        Bro really cooked!{" "}
+        <Highlight>
+        Good Work.
+        </Highlight>
+      </p>
+    ),
+  },
+
+  {
+    id: 5,
     name: "Aryan Pandey",
     designation: "Full Stack Developer",
     content: (
@@ -88,6 +101,21 @@ const CARDS = [
         Really liked this portfolio and your hackathon project too,{" "}
         <Highlight>
         Keep it up!
+        </Highlight>
+      </p>
+    ),
+  },
+
+  {
+    id: 6,
+    name: "Katherine",
+    designation: "App Developer",
+    content: (
+      <p>
+        Really saw something new this time,
+        {" "}
+        <Highlight>
+        Good!
         </Highlight>
       </p>
     ),
