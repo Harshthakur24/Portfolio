@@ -117,7 +117,7 @@ const CARDS = [
     designation: "Blockchain Developer",
     content: (
       <p>
-        Really saw something new this time, <Highlight>Good!</Highlight>
+        Really saw something new this time,<Highlight>Good!</Highlight>
       </p>
     ),
   },
