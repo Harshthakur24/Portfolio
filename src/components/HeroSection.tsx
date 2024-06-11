@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 function downloadFile() {
-  const resumeURL = '/HarshThakur_Resume.pdf';
+  const resumeURL = "/HarshThakur_Resume.pdf";
 
   const anchorElement = document.createElement("a");
 
@@ -22,10 +22,9 @@ function downloadFile() {
 }
 
 function redirectToLinkedIn() {
+  const linkedinURL = "https://www.linkedin.com/in/harsh-thakur-20877b246";
 
-  const linkedinURL = 'https://www.linkedin.com/in/harsh-thakur-20877b246';
-
-  window.open(linkedinURL), '_blank';
+  window.open(linkedinURL), "_blank";
 }
 
 const HeroSection = () => {
@@ -59,9 +58,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-
-          </p>
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl"></p>
           <div>
             <button
               onClick={redirectToLinkedIn}
@@ -73,7 +70,15 @@ const HeroSection = () => {
               href="/"
               className="transform transition duration-300 hover:scale-110 rounded px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
             >
-              <button onClick={()=>{window.open("https://drive.google.com/file/d/1hxIYJ9-LIulrEIPg9FnUbRKzo6XJesGS/view?usp=sharing"), '_blank'}} className="rounded block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              <button
+                onClick={() => {
+                  window.open(
+                    "https://drive.google.com/file/d/1hxIYJ9-LIulrEIPg9FnUbRKzo6XJesGS/view?usp=sharing"
+                  ),
+                    "_blank";
+                }}
+                className="rounded block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2"
+              >
                 Resume
               </button>
             </Link>
