@@ -25,7 +25,12 @@ const Footer: React.FC = () => {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg p-[1px] border-[2.6px] border-blue-400">
                     <div className="w-full h-full bg-black rounded-[7px] group transition duration-200 text-white flex items-center justify-center hover:bg-transparent">
-                      <span className="relative z-10">Buy me a Coffee☕</span>
+                      <span className="relative z-10">
+                        Buy me a Coffee
+                        <span className="inline-block animate-bounce scale-110">
+                          ☕
+                        </span>
+                      </span>
                     </div>
                   </div>
                 </button>
