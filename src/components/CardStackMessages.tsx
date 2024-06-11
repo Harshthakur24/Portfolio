@@ -17,7 +17,7 @@ function CardStackMessages() {
         transition={{
           type: "spring",
           stiffness: 230,
-          damping: 18,
+          damping: 22,
         }}
       >
         <CardStack items={CARDS} />
