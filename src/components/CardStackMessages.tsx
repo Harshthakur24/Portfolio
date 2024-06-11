@@ -1,11 +1,27 @@
 "use client";
-import { CardStack } from "@/components/ui/card-stack"
+import { CardStack } from "@/components/ui/card-stack";
 import { cn } from "@/utils/cn";
+import { useRef } from "react";
+import { motion, inView, useInView } from "framer-motion";
 
 function CardStackMessages() {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
     <div className="h-[25rem] ml-[-263px] flex items-center justify-center ">
-      <CardStack items={CARDS} />
+      <motion.div
+        ref={ref}
+        initial={{ scale: 0 }}
+        animate={isInView ? { rotate: 360, scale: 1 } : {}}
+        transition={{
+          type: "spring",
+          stiffness: 230,
+          damping: 18,
+        }}
+      >
+        <CardStack items={CARDS} />
+      </motion.div>
     </div>
   );
 }
@@ -36,7 +52,7 @@ const CARDS = [
     designation: "Full Stack Developer",
     content: (
       <p>
-         Amazing website bro,<Highlight>Keep it up!</Highlight> 
+        Amazing website bro,<Highlight>Keep it up!</Highlight>
       </p>
     ),
   },
@@ -47,8 +63,7 @@ const CARDS = [
     content: (
       <p>
         Nice Tech stack bro, I overall loved this website{" "}
-        <Highlight>Good Job!
-        </Highlight>
+        <Highlight>Good Job!</Highlight>
       </p>
     ),
   },
@@ -59,9 +74,7 @@ const CARDS = [
     content: (
       <p>
         What an innovative animated components,{" "}
-        <Highlight>
-        really love your work.
-        </Highlight>
+        <Highlight>really love your work.</Highlight>
       </p>
     ),
   },
@@ -71,10 +84,7 @@ const CARDS = [
     designation: "Full Stack Developer",
     content: (
       <p>
-        Good overall UI and beautiful components{" "}
-        <Highlight>
-        Nice!
-        </Highlight>
+        Good overall UI and beautiful components <Highlight>Nice!</Highlight>
       </p>
     ),
   },
@@ -84,10 +94,7 @@ const CARDS = [
     designation: "Full Stack Developer",
     content: (
       <p>
-        Bro really cooked!{" "}
-        <Highlight>
-        Good Work.
-        </Highlight>
+        Bro really cooked! <Highlight>Good Work.</Highlight>
       </p>
     ),
   },
@@ -99,9 +106,7 @@ const CARDS = [
     content: (
       <p>
         Really liked this portfolio and your hackathon project too,{" "}
-        <Highlight>
-        Keep it up!
-        </Highlight>
+        <Highlight>Keep it up!</Highlight>
       </p>
     ),
   },
@@ -112,15 +117,10 @@ const CARDS = [
     designation: "Blockchain Developer",
     content: (
       <p>
-        Really saw something new this time,
-        {" "}
-        <Highlight>
-        Good!
-        </Highlight>
+        Really saw something new this time, <Highlight>Good!</Highlight>
       </p>
     ),
   },
-  
 ];
 
 export default CardStackMessages;
