@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 
-
 interface NavLinkType {
   title: string;
   path: string;
@@ -31,7 +30,6 @@ const Navbar: React.FC = () => {
   const [visible, setVisible] = useState(true);
   const [activeLink, setActiveLink] = useState<string>("");
   const { scrollYProgress } = useScroll();
-
 
   useMotionValueEvent(scrollYProgress, "change", (current: number) => {
     if (typeof current === "number") {
@@ -60,7 +58,7 @@ const Navbar: React.FC = () => {
     const targetElement = document.querySelector(path);
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.getBoundingClientRect().top + window.scrollY - 70, 
+        top: targetElement.getBoundingClientRect().top + window.scrollY - 70,
         behavior: "smooth",
       });
     }
@@ -75,7 +73,10 @@ const Navbar: React.FC = () => {
       className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 border-b border-[#33353F]"
     >
       <div className="container flex flex-wrap items-center justify-between mx-auto px-4 py-2 lg:py-4">
-        <Link href="/" className="text-2xl md:text-2xl text-white font-semibold">
+        <Link
+          href="/"
+          className="text-2xl md:text-2xl text-white font-semibold"
+        >
           Harsh
         </Link>
         <div className="block md:hidden">

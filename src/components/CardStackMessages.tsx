@@ -16,8 +16,8 @@ function CardStackMessages() {
         animate={isInView ? { rotate: 360, scale: 1 } : {}}
         transition={{
           type: "spring",
-          stiffness: 170,
-          damping: 18,
+          stiffness: 140,
+          damping: 15,
         }}
       >
         <CardStack items={CARDS} />

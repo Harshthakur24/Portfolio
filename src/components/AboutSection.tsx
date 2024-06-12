@@ -1,10 +1,19 @@
 "use client";
-import React, { useTransition, useState, FC, ReactNode } from "react";
+import React, {
+  useTransition,
+  useState,
+  FC,
+  ReactNode,
+  useRef,
+  useEffect,
+} from "react";
 import Image from "next/image";
 import TabButton from "@/components/TabButton";
 import { CardContainer, CardItem, CardBody } from "./ui/3d-card";
 import { BoxesCore, Boxes } from "./ui/background-boxes";
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const openProject = () => {
   const project_url = "https://storyandverse.netlify.app/";
@@ -188,6 +197,7 @@ const AboutSection: FC = () => {
         </div>
       </div>
       <div id="skills"></div>
+      <div></div>
     </section>
   );
 };
