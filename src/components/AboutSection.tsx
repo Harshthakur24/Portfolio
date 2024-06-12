@@ -89,16 +89,16 @@ const AboutSection: FC = () => {
   const [index1, setIndex1] = useState(0);
   const [index2, setIndex2] = useState(0);
   useEffect(() => {
-    if (index1 === 3) {
+    if (index1 === 4) {
       setIndex1(0);
     }
-    if (index2 === 3) {
+    if (index2 === 4) {
       setIndex2(0);
     }
     const timeout = setTimeout(() => {
       setIndex1(index1 + 1);
       setIndex2(index2 + 1);
-    }, 6000);
+    }, 7000);
     return () => clearTimeout(timeout);
   }, [index1, index2]);
 
@@ -108,9 +108,16 @@ const AboutSection: FC = () => {
     "There's no point in competing if you don't want to be the best!",
 
     "The magic you are looking for is in the work you are avoiding.",
+
+    "You need to be very nimble and very open-minded. Your success will be defined by how you adapt.",
   ];
 
-  const arr2 = ["- Harsh (tbh not me)", "- Virat Kohli", "- Kevin Ng"];
+  const arr2 = [
+    "- Satya Nadella",
+    "- Virat Kohli",
+    "- Kevin Ng",
+    "- Sundar Pichai",
+  ];
 
   return (
     <section className="text-white">
