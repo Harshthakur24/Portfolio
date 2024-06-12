@@ -86,6 +86,31 @@ const AboutSection: FC = () => {
       setTab(id);
     });
   };
+  const [index1, setIndex1] = useState(0);
+  const [index2, setIndex2] = useState(0);
+  useEffect(() => {
+    if (index1 === 3) {
+      setIndex1(0);
+    }
+    if (index2 === 3) {
+      setIndex2(0);
+    }
+    const timeout = setTimeout(() => {
+      setIndex1(index1 + 1);
+      setIndex2(index2 + 1);
+    }, 6000);
+    return () => clearTimeout(timeout);
+  }, [index1, index2]);
+
+  const arr1 = [
+    "Code is a digital poetry; write it with passion and purpose",
+
+    "There's no point competing if you don't want to be the best!",
+
+    "The magic you are looking for is in the work you are avoiding.",
+  ];
+
+  const arr2 = ["- Harsh (tbh not me)", "- Virat Kohli", "- Kevin Ng"];
 
   return (
     <section className="text-white">
@@ -93,11 +118,15 @@ const AboutSection: FC = () => {
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
         <Boxes />
-        <h1 className={"md:text-4xl text-xl text-white relative z-20"}>
-          Code is digital poetry; write it with passion and purpose.
+        <h1
+          className={
+            "md:text-6xl text-xl text-white relative z-20 text-6xl px-4 md:text-2xl lg:text-[37px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center"
+          }
+        >
+          {arr1[index1]}
         </h1>
-        <p className="text-center mt-2 text-neutral-300 relative z-20">
-          - Harsh (tbh not me)
+        <p className="mt-[13px] text-center mt-2 text-neutral-300 relative z-20 font-bold text-white text-sm md:text-lg lg:text-[19px]">
+          {arr2[index2]}
         </p>
       </div>
       <div
