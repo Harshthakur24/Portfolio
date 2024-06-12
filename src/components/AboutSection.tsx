@@ -105,7 +105,7 @@ const AboutSection: FC = () => {
   const arr1 = [
     "Code is a digital poetry; write it with passion and purpose",
 
-    "There's no point competing if you don't want to be the best!",
+    "There's no point in competing if you don't want to be the best!",
 
     "The magic you are looking for is in the work you are avoiding.",
   ];
