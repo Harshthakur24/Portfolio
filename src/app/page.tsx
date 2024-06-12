@@ -20,7 +20,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="scroll-smooth">
       <link rel="icon" href="logo.png" />
       <>
         {loading ? (
