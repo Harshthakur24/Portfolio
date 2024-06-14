@@ -5,22 +5,6 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-function downloadFile() {
-  const resumeURL = "/HarshThakur_Resume.pdf";
-
-  const anchorElement = document.createElement("a");
-
-  anchorElement.href = resumeURL;
-
-  anchorElement.download = "Harsh_resume.pdf";
-
-  document.body.appendChild(anchorElement);
-
-  anchorElement.click();
-
-  document.body.removeChild(anchorElement);
-}
-
 function redirectToLinkedIn() {
   const linkedinURL = "https://www.linkedin.com/in/harsh-thakur-20877b246";
 
@@ -73,7 +57,7 @@ const HeroSection = () => {
               <button
                 onClick={() => {
                   window.open(
-                    "https://drive.google.com/file/d/1hxIYJ9-LIulrEIPg9FnUbRKzo6XJesGS/view?usp=sharing"
+                    "https://drive.google.com/file/d/1zdjPdHaNdwSQ-FZbAcB1N04RuBnGoIOW/view?usp=sharing"
                   ),
                     "_blank";
                 }}
