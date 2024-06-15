@@ -123,7 +123,10 @@ const MessageMe: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://portfolio-nine-blue-38.vercel.app/api", formData);
+      const response = await axios.post(
+        "https://harsh-thakur.vercel.app/api",
+        formData
+      );
       if (response.status === 201) {
         setResponseMessage("Message sent successfully!");
         setErrorMessage("");
@@ -141,63 +144,72 @@ const MessageMe: React.FC = () => {
 
   return (
     <div id="contact">
-    <Container >
-      <Title className="text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto">
-        <Highlight className="text-black dark:text-black">Message Me</Highlight>
-      </Title>
-      <Form onSubmit={handleSubmit}>
-        <InputContainer>
-          <Label className="text-5xl" htmlFor="name">
-            <p className=" -ml-[357px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[27px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
-              Hello Harsh, My name is...
-            </p>
-          </Label>
-          <Input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Enter your name"
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
-          />
-        </InputContainer>
-        <InputContainer>
-          <Label htmlFor="email">
-            <p className=" -ml-[280px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[30px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
-              and my Email is...
-            </p>
-          </Label>
-          <Input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
-          />
-        </InputContainer>
-        <InputContainer>
-          <Label htmlFor="message">
-            <p className=" -ml-[300px] mt-[30px] text-2xl px-4 md:text-2xl lg:text-[30px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
-              I want to say that...
-            </p>
-          </Label>
-          <Textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Write message"
-            required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
-          ></Textarea>
-        </InputContainer>
-        <Button className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline" type="submit">Send</Button>
-      </Form>
-      {responseMessage && <ResponseMessage>{responseMessage}</ResponseMessage>}
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-    </Container>
+      <Container>
+        <Title className="text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto">
+          <Highlight className="text-black dark:text-black">
+            Message Me
+          </Highlight>
+        </Title>
+        <Form onSubmit={handleSubmit}>
+          <InputContainer>
+            <Label className="text-5xl" htmlFor="name">
+              <p className=" -ml-[357px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[27px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
+                Hello Harsh, My name is...
+              </p>
+            </Label>
+            <Input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
+            />
+          </InputContainer>
+          <InputContainer>
+            <Label htmlFor="email">
+              <p className=" -ml-[280px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[30px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
+                and my Email is...
+              </p>
+            </Label>
+            <Input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
+            />
+          </InputContainer>
+          <InputContainer>
+            <Label htmlFor="message">
+              <p className=" -ml-[300px] mt-[30px] text-2xl px-4 md:text-2xl lg:text-[30px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
+                I want to say that...
+              </p>
+            </Label>
+            <Textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Write message"
+              required
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
+            ></Textarea>
+          </InputContainer>
+          <Button
+            className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Send
+          </Button>
+        </Form>
+        {responseMessage && (
+          <ResponseMessage>{responseMessage}</ResponseMessage>
+        )}
+        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      </Container>
     </div>
   );
 };
