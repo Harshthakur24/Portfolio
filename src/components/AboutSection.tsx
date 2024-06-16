@@ -247,7 +247,7 @@ const AboutSection: FC = () => {
             isInView
               ? {
                   x: 750,
-                  y: -200,
+                  y: -100,
                   scale: 2,
                   rotate: 360,
                 }
