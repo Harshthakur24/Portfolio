@@ -8,6 +8,7 @@ import { Skills } from "@/components/Skills";
 import MessageMe from "@/components/MessageMe";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import CardStackMessages from "@/components/CardStackMessages";
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
 

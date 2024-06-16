@@ -11,7 +11,7 @@ import Image from "next/image";
 import TabButton from "@/components/TabButton";
 import { CardContainer, CardItem, CardBody } from "./ui/3d-card";
 import { BoxesCore, Boxes } from "./ui/background-boxes";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -77,6 +77,8 @@ const TAB_DATA: TabData[] = [
 ];
 
 const AboutSection: FC = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
   const [Liked, setLinked] = useState<boolean>(false);
   const [tab, setTab] = useState<string>("skills");
   const [isPending, startTransition] = useTransition();
@@ -233,7 +235,41 @@ const AboutSection: FC = () => {
         </div>
       </div>
       <div id="skills"></div>
-      <div></div>
+      <div ref={ref}>
+        <motion.div
+          initial={{
+            x: -750,
+            y: 220,
+            scale: 0.8,
+            rotate: -360,
+          }}
+          animate={
+            isInView
+              ? {
+                  x: 750,
+                  y: -200,
+                  scale: 2,
+                  rotate: 360,
+                }
+              : {}
+          }
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          }}
+        >
+          <Image
+            ref={ref}
+            src="/flower.png"
+            alt=""
+            className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            width={100}
+            height={100}
+          />
+        </motion.div>
+      </div>
     </section>
   );
 };

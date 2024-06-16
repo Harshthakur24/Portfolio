@@ -57,7 +57,7 @@ export function Skills(): JSX.Element {
                 {skills[category].map((skill: any) => (
                   <div
                     key={skill}
-                    className="bg-gray-800 my-2 p-4  rounded-lg shadow-md transform hover:scale-105 hover:bg-gray-700 transition-transform duration-300 text-center lg:min-w-[150px] min-w-[200px]"
+                    className="bg-gray-800 my-2 p-4 rounded-lg shadow-md transform hover:scale-110 hover:bg-gray-700 transition-transform duration-300 text-center lg:min-w-[150px] min-w-[200px]"
                   >
                     {skill}
                   </div>

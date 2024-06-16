@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useContext } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
@@ -123,6 +123,7 @@ const MessageMe: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
+      const data = formData;
       const response = await axios.post(
         "https://harsh-thakur.vercel.app/api",
         formData

@@ -61,7 +61,7 @@ const handler = async (req: NextRequest) => {
       const newMessage = new Message({ name, email, message });
       await newMessage.save();
       return NextResponse.json(
-        { message: "Message sent successfully" },
+        { message: "Message sent successfully", data: {name, message} },
         { status: 201 }
       );
     } catch (error) {
