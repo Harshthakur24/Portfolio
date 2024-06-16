@@ -78,7 +78,7 @@ const TAB_DATA: TabData[] = [
 
 const AboutSection: FC = () => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
   const [Liked, setLinked] = useState<boolean>(false);
   const [tab, setTab] = useState<string>("skills");
   const [isPending, startTransition] = useTransition();
@@ -246,8 +246,8 @@ const AboutSection: FC = () => {
           animate={
             isInView
               ? {
-                  x: 750,
-                  y: -100,
+                  x: [-750, 950],
+                  y: [220, -100],
                   scale: 2,
                   rotate: 360,
                 }
@@ -255,8 +255,6 @@ const AboutSection: FC = () => {
           }
           transition={{
             duration: 5,
-            repeat: Infinity,
-            repeatType: "reverse",
             ease: "easeInOut",
           }}
         >
