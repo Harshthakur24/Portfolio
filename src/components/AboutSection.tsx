@@ -255,7 +255,7 @@ const AboutSection: FC = () => {
           }
           transition={{
             duration: 6,
-            ease: "easeInOut",
+            ease: "easeOut",
           }}
         >
           <Image
