@@ -254,7 +254,7 @@ const AboutSection: FC = () => {
               : {}
           }
           transition={{
-            duration: 5,
+            duration: 6,
             ease: "easeInOut",
           }}
         >
