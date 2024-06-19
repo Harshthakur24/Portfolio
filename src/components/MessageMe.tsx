@@ -3,7 +3,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
-import { AutoComplete } from "antd";
+import { AutoComplete, notification } from "antd";
 import type { DefaultOptionType } from "antd/es/select";
 
 const Container = styled.div`
@@ -130,21 +130,31 @@ const MessageMe: React.FC = () => {
         formData
       );
       if (response.status === 201) {
+        notification.success({
+          message: "Success",
+          description: "Message sent successfully! Thank you for messaging",
+        });
         setResponseMessage("Message sent successfully!");
         setErrorMessage("");
         setFormData({ name: "", email: "", message: "" });
       } else {
+        notification.error({
+          message: "Error",
+          description: "Failed to send message. Please try again later.",
+        });
         setResponseMessage("");
-        setErrorMessage("Failed to send message. Please try again later.");
       }
     } catch (error) {
       console.error("Error submitting message:", error);
+      notification.error({
+        message: "Error",
+        description: "Failed to send message. Please try again later.",
+      });
       setResponseMessage("");
-      setErrorMessage("Failed to send message. Please try again later.");
     }
   };
 
-  const [options, setOptions] = React.useState<DefaultOptionType[]>([]);
+  const [options, setOptions] = useState<DefaultOptionType[]>([]);
 
   const handleSearch = (value: string) => {
     setOptions(() => {
@@ -182,7 +192,7 @@ const MessageMe: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="  Enter your name"
+              placeholder="Enter your name"
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
             />
@@ -213,7 +223,7 @@ const MessageMe: React.FC = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="  Write your message"
+              placeholder="Write your message"
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
             ></Textarea>
@@ -225,10 +235,6 @@ const MessageMe: React.FC = () => {
             Send
           </Button>
         </Form>
-        {responseMessage && (
-          <ResponseMessage>{responseMessage}</ResponseMessage>
-        )}
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       </Container>
     </div>
   );
