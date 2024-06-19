@@ -1,8 +1,10 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent, useContext } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
+import { AutoComplete } from "antd";
+import type { DefaultOptionType } from "antd/es/select";
 
 const Container = styled.div`
   padding: 20px;
@@ -123,7 +125,6 @@ const MessageMe: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const data = formData;
       const response = await axios.post(
         "https://harsh-thakur.vercel.app/api",
         formData
@@ -141,6 +142,24 @@ const MessageMe: React.FC = () => {
       setResponseMessage("");
       setErrorMessage("Failed to send message. Please try again later.");
     }
+  };
+
+  const [options, setOptions] = React.useState<DefaultOptionType[]>([]);
+
+  const handleSearch = (value: string) => {
+    setOptions(() => {
+      if (!value || value.includes("@")) {
+        return [];
+      }
+      return ["gmail.com", "outlook.com"].map<DefaultOptionType>((domain) => ({
+        label: `${value}@${domain}`,
+        value: `${value}@${domain}`,
+      }));
+    });
+  };
+
+  const handleEmailChange = (value: string) => {
+    setFormData({ ...formData, email: value });
   };
 
   return (
@@ -174,14 +193,13 @@ const MessageMe: React.FC = () => {
                 and my Email is...
               </p>
             </Label>
-            <Input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
+            <AutoComplete
+              style={{ width: "100%" }}
+              onSearch={handleSearch}
+              onChange={handleEmailChange}
               placeholder="Enter your email"
-              required
-              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
+              options={options}
+              value={formData.email}
             />
           </InputContainer>
           <InputContainer>
