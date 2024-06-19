@@ -173,7 +173,7 @@ const MessageMe: React.FC = () => {
         <Form onSubmit={handleSubmit}>
           <InputContainer>
             <Label className="text-5xl" htmlFor="name">
-              <p className=" -ml-[357px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[27px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
+              <p className=" -ml-[362px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[27px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
                 Hello Harsh, My name is...
               </p>
             </Label>
@@ -182,18 +182,19 @@ const MessageMe: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Enter your name"
+              placeholder="  Enter your name"
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
             />
           </InputContainer>
           <InputContainer>
             <Label htmlFor="email">
-              <p className=" -ml-[280px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[30px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
+              <p className="-ml-[276px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[30px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
                 and my Email is...
               </p>
             </Label>
             <AutoComplete
+              className="h-10 top-1"
               style={{ width: "100%" }}
               onSearch={handleSearch}
               onChange={handleEmailChange}
@@ -212,7 +213,7 @@ const MessageMe: React.FC = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Write message"
+              placeholder="  Write your message"
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
             ></Textarea>
