@@ -132,7 +132,7 @@ const MessageMe: React.FC = () => {
       if (response.status === 201) {
         notification.success({
           message: "Success",
-          description: "Message sent successfully! Thank you for messaging",
+          description: "Message sent successfully! Thank you for messaging.",
         });
         setResponseMessage("Message sent successfully!");
         setErrorMessage("");
