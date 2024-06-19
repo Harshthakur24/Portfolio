@@ -192,7 +192,7 @@ const MessageMe: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Enter your name"
+              placeholder="  Enter your name"
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
             />
@@ -223,7 +223,7 @@ const MessageMe: React.FC = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Write your message"
+              placeholder="  Write your message"
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
             ></Textarea>
