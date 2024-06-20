@@ -134,10 +134,7 @@ const MessageMe: React.FC = () => {
         formData
       );
       if (response.status === 201) {
-        notification.success({
-          message: "Success",
-          description: "Message sent successfully! Thank you for messaging.",
-        });
+        console.log("Success in sending message!");
       } else {
         notification.error({
           message: "Error",
