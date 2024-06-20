@@ -122,11 +122,13 @@ const MessageMe: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    notification.success({
-      message: "Success",
-      description: "Message sent successfully! Thank you for messaging.",
-    });
+
     try {
+      notification.success({
+        message: "Success",
+        description: "Message sent successfully! Thank you for messaging.",
+      });
+      setFormData({ name: "", email: "", message: "" });
       const response = await axios.post(
         "https://harsh-thakur.vercel.app/api",
         formData
@@ -136,8 +138,6 @@ const MessageMe: React.FC = () => {
           message: "Success",
           description: "Message sent successfully! Thank you for messaging.",
         });
-
-        setFormData({ name: "", email: "", message: "" });
       } else {
         notification.error({
           message: "Error",
@@ -228,15 +228,8 @@ const MessageMe: React.FC = () => {
             ></Textarea>
           </InputContainer>
           <Button
-            className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline"
+            className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline "
             type="submit"
-            onClick={() => {
-              notification.success({
-                message: "Success",
-                description:
-                  "Message sent successfully! Thank you for messaging.",
-              });
-            }}
           >
             Send
           </Button>
