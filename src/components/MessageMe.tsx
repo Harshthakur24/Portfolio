@@ -112,6 +112,8 @@ const MessageMe: React.FC = () => {
     email: "",
     message: "",
   });
+  const [responseMessage, setResponseMessage] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -122,25 +124,25 @@ const MessageMe: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
     try {
-      setFormData({ name: "", email: "", message: "" });
-      notification.success({
-        message: "Success",
-        description: "Message sent successfully! Thank you for messaging.",
-      });
-
       const response = await axios.post(
         "https://harsh-thakur.vercel.app/api",
         formData
       );
+      setFormData({ name: "", email: "", message: "" });
+      notification.success({
+        message: "Success",
+        description: "Message sent successfully! Thank you for messaging",
+      });
       if (response.status === 201) {
-        console.log("Success in sending message!");
+        setResponseMessage("");
+        setErrorMessage("");
       } else {
         notification.error({
           message: "Error",
           description: "Failed to send message. Please try again later.",
         });
+        setResponseMessage("");
       }
     } catch (error) {
       console.error("Error submitting message:", error);
@@ -148,6 +150,7 @@ const MessageMe: React.FC = () => {
         message: "Error",
         description: "Failed to send message. Please try again later.",
       });
+      setResponseMessage("");
     }
   };
 
@@ -189,7 +192,7 @@ const MessageMe: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="  Enter your name"
+              placeholder="Enter your name"
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
             />
@@ -220,13 +223,13 @@ const MessageMe: React.FC = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="  Write your message"
+              placeholder="Write your message"
               required
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
             ></Textarea>
           </InputContainer>
           <Button
-            className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline "
+            className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Send
