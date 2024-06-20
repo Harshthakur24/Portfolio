@@ -230,6 +230,13 @@ const MessageMe: React.FC = () => {
           <Button
             className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline"
             type="submit"
+            onClick={() => {
+              notification.success({
+                message: "Success",
+                description:
+                  "Message sent successfully! Thank you for messaging.",
+              });
+            }}
           >
             Send
           </Button>
