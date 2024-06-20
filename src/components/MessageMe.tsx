@@ -112,8 +112,6 @@ const MessageMe: React.FC = () => {
     email: "",
     message: "",
   });
-  const [responseMessage, setResponseMessage] = useState<string>("");
-  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -124,6 +122,10 @@ const MessageMe: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    notification.success({
+      message: "Success",
+      description: "Message sent successfully! Thank you for messaging.",
+    });
     try {
       const response = await axios.post(
         "https://harsh-thakur.vercel.app/api",
@@ -134,15 +136,13 @@ const MessageMe: React.FC = () => {
           message: "Success",
           description: "Message sent successfully! Thank you for messaging.",
         });
-        setResponseMessage("Message sent successfully!");
-        setErrorMessage("");
+
         setFormData({ name: "", email: "", message: "" });
       } else {
         notification.error({
           message: "Error",
           description: "Failed to send message. Please try again later.",
         });
-        setResponseMessage("");
       }
     } catch (error) {
       console.error("Error submitting message:", error);
@@ -150,7 +150,6 @@ const MessageMe: React.FC = () => {
         message: "Error",
         description: "Failed to send message. Please try again later.",
       });
-      setResponseMessage("");
     }
   };
 
