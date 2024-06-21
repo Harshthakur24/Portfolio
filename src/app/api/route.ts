@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
-import { message } from "antd";
 
 
 const MONGODB_URI = "mongodb+srv://thakur2004harsh:ZH7bsYIopVvPxEy7@cluster0.nrlnf26.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -33,8 +32,6 @@ const messageSchema = new mongoose.Schema<IMessage>({
 });
 
 
-
-
 let Message: Model<IMessage>;
 try {
   Message = mongoose.model<IMessage>("Message");
@@ -43,16 +40,14 @@ try {
 }
 
 
+if (!mongoose.connections[0].readyState) {
+  mongoose
+    .connect(MONGODB_URI)
+    .then(() => console.log("MongoDB connected"))
+    .catch((err:any) => console.error("MongoDB connection error:", err));
+}
 
 const handler = async (req: NextRequest) => {
-
-  if (!mongoose.connections[0].readyState) {
-     mongoose
-      .connect(MONGODB_URI)
-      .then(() => console.log("MongoDB connected"))
-      .catch((err:any) => console.error("MongoDB connection error:", err));
-  }
-
   if (req.method === "POST") {
     const { name, email, message } = await req.json();
     if (!name || !email || !message) {

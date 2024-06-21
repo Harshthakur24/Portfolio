@@ -124,10 +124,11 @@ const MessageMe: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
     setFormData({ name: "", email: "", message: "" });
     notification.success({
       message: "Success",
-      description: "Message sent successfully! Thank you for messaging",
+      description: "Message sent successfully! Thank you for messaging.",
     });
 
     try {
@@ -135,23 +136,9 @@ const MessageMe: React.FC = () => {
         "https://harsh-thakur.vercel.app/api",
         formData
       );
-
-      if (response.status === 201) {
-        setResponseMessage("");
-        setErrorMessage("");
-      } else {
-        notification.error({
-          message: "Error",
-          description: "Failed to send message. Please try again later.",
-        });
-        setResponseMessage("");
-      }
     } catch (error) {
       console.error("Error submitting message:", error);
-      notification.error({
-        message: "Error",
-        description: "Failed to send message. Please try again later.",
-      });
+
       setResponseMessage("");
     }
   };
