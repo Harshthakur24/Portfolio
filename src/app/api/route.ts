@@ -33,7 +33,12 @@ const messageSchema = new mongoose.Schema<IMessage>({
 });
 
 const connecttodb = () => {
-  mongoose.connect(MONGODB_URI);
+  if (!mongoose.connections[0].readyState) {
+    mongoose
+      .connect(MONGODB_URI)
+      .then(() => console.log("MongoDB connected"))
+      .catch((err:any) => console.error("MongoDB connection error:", err));
+  }
 }
 
 
@@ -45,12 +50,7 @@ try {
 }
 
 
-if (!mongoose.connections[0].readyState) {
-  mongoose
-    .connect(MONGODB_URI)
-    .then(() => console.log("MongoDB connected"))
-    .catch((err:any) => console.error("MongoDB connection error:", err));
-}
+
 
 const handler = async (req: NextRequest) => {
 
