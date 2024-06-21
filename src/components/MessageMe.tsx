@@ -5,9 +5,6 @@ import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
 import { AutoComplete, notification } from "antd";
 import type { DefaultOptionType } from "antd/es/select";
-import { connect } from "@/app/api/route";
-
-const connected = connect();
 
 const Container = styled.div`
   padding: 20px;
