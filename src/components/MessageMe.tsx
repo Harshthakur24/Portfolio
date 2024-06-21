@@ -6,7 +6,8 @@ import { Highlight } from "./ui/hero-highlight";
 import { AutoComplete, notification } from "antd";
 import type { DefaultOptionType } from "antd/es/select";
 
-const d = axios.post("https://harsh-thakur.vercel.app/api");
+const d = axios.get("https://harsh-thakur.vercel.app/api");
+console.log(d);
 
 const Container = styled.div`
   padding: 20px;

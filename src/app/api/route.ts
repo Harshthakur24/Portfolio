@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
+import { message } from "antd";
 
 
 const MONGODB_URI = "mongodb+srv://thakur2004harsh:ZH7bsYIopVvPxEy7@cluster0.nrlnf26.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -48,6 +49,7 @@ if (!mongoose.connections[0].readyState) {
 }
 
 const handler = async (req: NextRequest) => {
+  if(req.method === "GET") return;
   if (req.method === "POST") {
     const { name, email, message } = await req.json();
     if (!name || !email || !message) {
