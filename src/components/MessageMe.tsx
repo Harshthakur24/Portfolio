@@ -128,7 +128,7 @@ const MessageMe: React.FC = () => {
     setTimeout(() => {
       notification.success({
         message: "Success",
-        description: "Message sent successfully! Thank you for messaging",
+        description: "Message sent successfully! Thank you for messaging.",
       });
     }, 500);
 
