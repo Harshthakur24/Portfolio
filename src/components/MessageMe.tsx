@@ -126,8 +126,9 @@ const MessageMe: React.FC = () => {
   };
 
   const handleSubmit = async (e: FormEvent) => {
-    setFormData({ name: "", email: "", message: "" });
     e.preventDefault();
+    setFormData({ name: "", email: "", message: "" });
+
     try {
       const response = await axios.post(
         "https://harsh-thakur.vercel.app/api",
