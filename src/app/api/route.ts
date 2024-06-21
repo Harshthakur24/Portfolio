@@ -32,6 +32,10 @@ const messageSchema = new mongoose.Schema<IMessage>({
   },
 });
 
+const connecttodb = () => {
+  mongoose.connect(MONGODB_URI);
+}
+
 
 let Message: Model<IMessage>;
 try {
@@ -49,7 +53,7 @@ if (!mongoose.connections[0].readyState) {
 }
 
 const handler = async (req: NextRequest) => {
-  if(req.method === "GET") return;
+
   if (req.method === "POST") {
     const { name, email, message } = await req.json();
     if (!name || !email || !message) {
@@ -81,4 +85,4 @@ const handler = async (req: NextRequest) => {
   }
 };
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST, connecttodb };

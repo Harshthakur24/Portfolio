@@ -5,9 +5,9 @@ import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
 import { AutoComplete, notification } from "antd";
 import type { DefaultOptionType } from "antd/es/select";
+import { connecttodb } from "@/app/api/route";
 
-const d = axios.get("https://harsh-thakur.vercel.app/api");
-console.log(d);
+connecttodb();
 
 const Container = styled.div`
   padding: 20px;
