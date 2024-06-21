@@ -126,13 +126,14 @@ const MessageMe: React.FC = () => {
   };
 
   const handleSubmit = async (e: FormEvent) => {
+    setFormData({ name: "", email: "", message: "" });
     e.preventDefault();
     try {
       const response = await axios.post(
         "https://harsh-thakur.vercel.app/api",
         formData
       );
-      setFormData({ name: "", email: "", message: "" });
+
       notification.success({
         message: "Success",
         description: "Message sent successfully! Thank you for messaging",
