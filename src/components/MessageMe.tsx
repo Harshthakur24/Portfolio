@@ -125,10 +125,12 @@ const MessageMe: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setFormData({ name: "", email: "", message: "" });
-    notification.success({
-      message: "Success",
-      description: "Message sent successfully! Thank you for messaging",
-    });
+    setTimeout(() => {
+      notification.success({
+        message: "Success",
+        description: "Message sent successfully! Thank you for messaging",
+      });
+    }, 500);
 
     try {
       const response = await axios.post(
