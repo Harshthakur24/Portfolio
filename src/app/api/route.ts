@@ -43,15 +43,16 @@ try {
 }
 
 
-
-
-const handler = async (req: NextRequest) => {
+const connect = async() => {
   if (!mongoose.connections[0].readyState) {
-    mongoose
+    await mongoose
       .connect(MONGODB_URI)
       .then(() => console.log("MongoDB connected"))
       .catch((err:any) => console.error("MongoDB connection error:", err));
   }
+}
+
+const handler = async (req: NextRequest) => {
 
   if (req.method === "POST") {
     const { name, email, message } = await req.json();
@@ -84,4 +85,4 @@ const handler = async (req: NextRequest) => {
   }
 };
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST, connect };
