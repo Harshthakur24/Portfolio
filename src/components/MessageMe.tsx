@@ -5,9 +5,6 @@ import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
 import { AutoComplete, notification } from "antd";
 import type { DefaultOptionType } from "antd/es/select";
-import { connecttodb } from "@/app/api/route";
-
-connecttodb();
 
 const Container = styled.div`
   padding: 20px;
@@ -185,7 +182,7 @@ const MessageMe: React.FC = () => {
             Message Me
           </Highlight>
         </Title>
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <InputContainer>
             <Label className="text-5xl" htmlFor="name">
               <p className=" -ml-[362px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[27px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
@@ -234,6 +231,7 @@ const MessageMe: React.FC = () => {
             ></Textarea>
           </InputContainer>
           <Button
+            onClick={handleSubmit}
             className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
