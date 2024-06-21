@@ -128,6 +128,10 @@ const MessageMe: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setFormData({ name: "", email: "", message: "" });
+    notification.success({
+      message: "Success",
+      description: "Message sent successfully! Thank you for messaging",
+    });
 
     try {
       const response = await axios.post(
@@ -135,10 +139,6 @@ const MessageMe: React.FC = () => {
         formData
       );
 
-      notification.success({
-        message: "Success",
-        description: "Message sent successfully! Thank you for messaging",
-      });
       if (response.status === 201) {
         setResponseMessage("");
         setErrorMessage("");
