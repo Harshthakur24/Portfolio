@@ -112,8 +112,6 @@ const MessageMe: React.FC = () => {
     email: "",
     message: "",
   });
-  const [responseMessage, setResponseMessage] = useState<string>("");
-  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -137,14 +135,11 @@ const MessageMe: React.FC = () => {
           message: "Success",
           description: "Message sent successfully! Thank you for messaging.",
         });
-        setResponseMessage("");
-        setErrorMessage("");
       } else {
         notification.error({
           message: "Error",
           description: "Failed to send message. Please try again later.",
         });
-        setResponseMessage("");
       }
     } catch (error) {
       console.error("Error submitting message:", error);
@@ -152,7 +147,6 @@ const MessageMe: React.FC = () => {
         message: "Error",
         description: "Failed to send message. Please try again later.",
       });
-      setResponseMessage("");
     }
   };
 
