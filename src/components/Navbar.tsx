@@ -6,6 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 import { Button, ConfigProvider, Popover } from "antd";
 import { Typography } from "antd";
+import { Rate } from "antd";
 
 const { Paragraph, Text } = Typography;
 
@@ -40,7 +41,8 @@ const Navbar: React.FC = () => {
         Hello dear stranger, I made this website just for fun and for the sake
         of building something cool by applying my engineering skills.
       </p>
-      <p>If you loved this website I can make it for you too.🚀</p>
+      <p>If you loved this website, I can make it for you too.🚀</p>
+      <Rate></Rate>
     </div>
   );
 
