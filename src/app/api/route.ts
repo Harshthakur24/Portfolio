@@ -40,14 +40,17 @@ try {
 }
 
 
-if (!mongoose.connections[0].readyState) {
+
+
+const handler = async (req: NextRequest) => {
+  
+  if (!mongoose.connections[0].readyState) {
   mongoose
     .connect(MONGODB_URI)
     .then(() => console.log("MongoDB connected"))
     .catch((err:any) => console.error("MongoDB connection error:", err));
 }
 
-const handler = async (req: NextRequest) => {
   if (req.method === "POST") {
     const { name, email, message } = await req.json();
     if (!name || !email || !message) {
