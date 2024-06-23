@@ -4,6 +4,10 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
+import { Button, ConfigProvider, Popover } from "antd";
+import { Typography } from "antd";
+
+const { Paragraph, Text } = Typography;
 
 interface NavLinkType {
   title: string;
@@ -30,6 +34,15 @@ const Navbar: React.FC = () => {
   const [visible, setVisible] = useState(true);
   const [activeLink, setActiveLink] = useState<string>("");
   const { scrollYProgress } = useScroll();
+  const content = (
+    <div>
+      <p>
+        Hello dear stranger, I made this website just for fun and for the sake
+        of building something cool by applying my engineering skills.
+      </p>
+      <p>If you loved this website I can make it for you too.🚀</p>
+    </div>
+  );
 
   useMotionValueEvent(scrollYProgress, "change", (current: number) => {
     if (typeof current === "number") {
@@ -73,11 +86,17 @@ const Navbar: React.FC = () => {
       className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 border-b border-[#33353F]"
     >
       <div className="container flex flex-wrap items-center justify-between mx-auto px-4 py-2 lg:py-4">
-        <Link
-          href="/"
-          className="text-2xl md:text-2xl text-white font-semibold"
-        >
-          Harsh
+        <Link href="/">
+          <Popover
+            className="text-2xl md:text-2xl text-white font-bold border-none hover:bg-black"
+            placement="bottom"
+            title={"Something from me!"}
+            content={content}
+          >
+            <Button className="text-2xl md:text-2xl text-white font-bold border-none hover:bg-black">
+              Harsh
+            </Button>
+          </Popover>
         </Link>
         <div className="block md:hidden">
           {!navbarOpen ? (

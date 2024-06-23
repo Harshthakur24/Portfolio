@@ -2,6 +2,9 @@
 import React from "react";
 import { FaTwitter, FaInstagram, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Typography } from "antd";
+
+const { Paragraph, Text } = Typography;
 
 const Footer: React.FC = () => {
   return (
@@ -84,8 +87,14 @@ const Footer: React.FC = () => {
                 </button>
               </motion.div>
             </div>
+            <div className="h-1 -mt-2 mb-1">
+              <Paragraph copyable className="text-white flex">
+                <span>Email➡️</span>thakur2004harsh@gmail.com
+              </Paragraph>
+            </div>
           </div>
-          <div className="flex items-end justify-end">
+
+          <div className="flex items-end justify-end -mb-4">
             <p className="text-sm">© 2024 Harsh Thakur. All rights reserved.</p>
           </div>
         </div>
