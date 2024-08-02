@@ -17,40 +17,39 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2300);
+    }, 1800);
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <PointerCursor>
-      <div className="scroll-smooth">
-        <link rel="icon" href="logo.png" />
-        <>
-          {loading ? (
-            <LoadingSpinner />
-          ) : (
-            <main className="flex min-h-screen flex-col bg-[#121212] cursor-none">
-              <Navbar />
-              <div className="container mt-24 mx-auto px-12 py-4">
-                <HeroSection />
-                <AboutSection />
-                <Projects />
-                <Skills />
-                <div className="flex">
-                  <div className="flex-[0_0_100%]">
-                    <MessageMe />
-                  </div>
-                  <div className="flex-[0_0_1%]">
-                    <CardStackMessages />
-                  </div>
+    <div className="scroll-smooth cursor-none">
+      <link rel="icon" href="logo.png" />
+
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <PointerCursor>
+          <main className="flex min-h-screen flex-col bg-[#121212] cursor-none">
+            <Navbar />
+            <div className="container mt-24 mx-auto px-12 py-4">
+              <HeroSection />
+              <AboutSection />
+              <Projects />
+              <Skills />
+              <div className="flex">
+                <div className="flex-[0_0_100%]">
+                  <MessageMe />
+                </div>
+                <div className="flex-[0_0_1%]">
+                  <CardStackMessages />
                 </div>
               </div>
-              <Footer />
-            </main>
-          )}
-        </>
-      </div>
-    </PointerCursor>
+            </div>
+            <Footer />
+          </main>
+        </PointerCursor>
+      )}
+    </div>
   );
 }
