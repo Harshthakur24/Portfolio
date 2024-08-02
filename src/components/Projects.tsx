@@ -101,17 +101,19 @@ export default function Projects() {
                 <div className="flex flex-row justify-between items-center mt-10">
                   <span className="text-sm text-gray-500">2022</span>
 
-                  <button
-                    onClick={(e) => {
-                      window.open(
-                        "https://storyandverse.netlify.app/",
-                        "_blank"
-                      );
-                    }}
-                    className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
-                  >
-                    Visit it
-                  </button>
+                  <motion.div whileHover={{ scale: 1.2 }}>
+                    <button
+                      onClick={(e) => {
+                        window.open(
+                          "https://storyandverse.netlify.app/",
+                          "_blank"
+                        );
+                      }}
+                      className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                    >
+                      Visit it
+                    </button>
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -156,17 +158,19 @@ export default function Projects() {
                 <div className="flex flex-row justify-between items-center mt-10">
                   <span className="text-sm text-gray-500">2022</span>
 
-                  <button
-                    onClick={(e) => {
-                      window.open(
-                        "https://storyandverse.netlify.app/",
-                        "_blank"
-                      );
-                    }}
-                    className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
-                  >
-                    Visit it
-                  </button>
+                  <motion.div whileHover={{ scale: 1.2 }}>
+                    <button
+                      onClick={(e) => {
+                        window.open(
+                          "https://storyandverse.netlify.app/",
+                          "_blank"
+                        );
+                      }}
+                      className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                    >
+                      Visit it
+                    </button>
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -211,17 +215,19 @@ export default function Projects() {
                 <div className="flex flex-row justify-between items-center mt-10">
                   <span className="text-sm text-gray-500">2022</span>
 
-                  <button
-                    onClick={(e) => {
-                      window.open(
-                        "https://storyandverse.netlify.app/",
-                        "_blank"
-                      );
-                    }}
-                    className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
-                  >
-                    Visit it
-                  </button>
+                  <motion.div whileHover={{ scale: 1.2 }}>
+                    <button
+                      onClick={(e) => {
+                        window.open(
+                          "https://storyandverse.netlify.app/",
+                          "_blank"
+                        );
+                      }}
+                      className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                    >
+                      Visit it
+                    </button>
+                  </motion.div>
                 </div>
               </div>
             </div>
