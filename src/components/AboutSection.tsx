@@ -175,25 +175,25 @@ const AboutSection: FC = () => {
               />
             </CardItem>
             <div className="cursor-none flex justify-between items-center mt-20">
-              <motion.div whileHover={{ scale: 1.2 }}>
+              <motion.div whileHover={{ scale: 1.2 }} className="cursor-none">
                 <button className="cursor-none" onClick={openProject}>
                   <CardItem
                     translateZ={20}
                     translateX={-40}
                     as="button"
-                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-blue-300 text-blue-200"
+                    className="cursor-none px-4 py-2 rounded-xl text-xs font-normal dark:text-blue-300 text-blue-200"
                   >
                     Check it out →
                   </CardItem>
                 </button>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.2 }}>
+              <motion.div whileHover={{ scale: 1.2 }} className="cursor-none">
                 <CardItem
                   translateZ={20}
                   translateX={40}
                   as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-blue-800 dark:text-black text-blue-400 text-xs font-bold"
+                  className="cursor-none px-4 py-2 rounded-xl bg-black dark:bg-blue-800 dark:text-black text-blue-400 text-xs font-bold"
                 >
                   <button
                     id="likeButton"
