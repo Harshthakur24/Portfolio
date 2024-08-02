@@ -23,7 +23,7 @@ const skills: any = {
 export function Skills(): JSX.Element {
   return (
     <div>
-      <div className="mt-[480px] h-1 mb-[0px]">
+      <div className="mt-[570px] h-1 mb-[0px]">
         <HeroHighlight>
           <motion.h1
             initial={{

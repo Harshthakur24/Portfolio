@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
                       "_blank"
                     )
                   }
-                  className="left-[282px] top-[35px] relative flex items-center justify-center w-[180px] h-12"
+                  className="cursor-none left-[282px] top-[35px] relative flex items-center justify-center w-[180px] h-12"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg p-[1px] border-[2.6px] border-blue-400">
                     <div className="w-full h-full bg-black rounded-[7px] group transition duration-200 text-white flex items-center justify-center hover:bg-transparent">
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                   onClick={() =>
                     window.open("https://x.com/HarshThaku44904", "_blank")
                   }
-                  className="text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
+                  className="cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
                   <FaTwitter className="mr-2" /> Twitter
                 </button>
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                       "_blank"
                     )
                   }
-                  className="text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
+                  className="cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
                   <FaInstagram className="mr-2" /> Instagram
                 </button>
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                   onClick={() =>
                     window.open("https://github.com/Harshthakur24", "_blank")
                   }
-                  className="text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
+                  className="cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
                   <FaGithub className="mr-2" /> GitHub
                 </button>
@@ -81,14 +81,14 @@ const Footer: React.FC = () => {
                       "_blank"
                     )
                   }
-                  className="text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
+                  className="cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
                   <FaLinkedinIn className="mr-2" /> LinkedIn
                 </button>
               </motion.div>
             </div>
             <div className="h-1 -mt-2 mb-1">
-              <Paragraph copyable className="text-white flex">
+              <Paragraph copyable className="cursor-none text-white flex">
                 <span>Email➡️</span>thakur2004harsh@gmail.com
               </Paragraph>
             </div>

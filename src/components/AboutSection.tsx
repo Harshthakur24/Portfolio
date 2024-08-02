@@ -14,6 +14,7 @@ import { BoxesCore, Boxes } from "./ui/background-boxes";
 import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ButtonWrapper from "./ButtonWrapper";
 
 const openProject = () => {
   const project_url = "https://storyandverse.netlify.app/";
@@ -122,7 +123,7 @@ const AboutSection: FC = () => {
   ];
 
   return (
-    <section className="text-white">
+    <section className="text-white mb-24">
       <div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
@@ -173,9 +174,9 @@ const AboutSection: FC = () => {
                 alt="thumbnail"
               />
             </CardItem>
-            <div className="flex justify-between items-center mt-20">
+            <div className="cursor-none flex justify-between items-center mt-20">
               <motion.div whileHover={{ scale: 1.2 }}>
-                <button onClick={openProject}>
+                <button className="cursor-none" onClick={openProject}>
                   <CardItem
                     translateZ={20}
                     translateX={-40}
@@ -196,7 +197,7 @@ const AboutSection: FC = () => {
                 >
                   <button
                     id="likeButton"
-                    className="transition-transform transition-color transform hover:scale-110 hover:text-blue-500"
+                    className="cursor-none transition-transform transition-color transform hover:scale-110 hover:text-blue-500"
                     onClick={handleClick}
                   >
                     Like it ❤️
@@ -267,6 +268,9 @@ const AboutSection: FC = () => {
             height={100}
           />
         </motion.div>
+      </div>
+      <div className="ml-36 -mt-24 ">
+        <ButtonWrapper></ButtonWrapper>
       </div>
     </section>
   );

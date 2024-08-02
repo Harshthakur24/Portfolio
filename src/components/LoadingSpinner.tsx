@@ -8,7 +8,7 @@ const SpinningLoader = () => {
       <div className="flex justify-center items-center h-screen">
         <style>{`
             .boxes {
-  --size: 32px;
+  --size: 38px;
   --duration: 800ms;
   height: calc(var(--size) * 2);
   width: calc(var(--size) * 3);
@@ -218,9 +218,6 @@ const SpinningLoader = () => {
             <div></div>
           </div>
         </div>
-        <p className="absolute inset-0 top-[240px] left-[40px] flex justify-center items-center text-2xl md:text-3xl lg:text-lg font-bold text-white">
-          Hold up! Preparing a beautiful website for you ❤️
-        </p>
       </div>
     </div>
   );

@@ -28,6 +28,6 @@
     ".next/types/**/*.ts",
     "src/components/Loadingpage.jsx",
     "src/components/Contactme.jsx"
-  ],
+, "src/components/ViewProjectsButton.jsx"  ],
   "exclude": ["node_modules"]
 }

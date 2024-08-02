@@ -37,11 +37,13 @@ const Navbar: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const content = (
     <div>
-      <p>
+      <p className="font-medium">
         Hello dear stranger, I made this website just for fun and for the sake
         of building something cool by applying my engineering skills.
       </p>
-      <p>If you loved this website, I can make it for you too.🚀</p>
+      <p className="font-medium">
+        If you loved this website, I can make it for you too.🚀
+      </p>
       <Rate></Rate>
     </div>
   );
@@ -95,7 +97,7 @@ const Navbar: React.FC = () => {
             title={"Something from me!"}
             content={content}
           >
-            <Button className="text-2xl md:text-2xl text-white font-bold border-none hover:bg-black">
+            <Button className="cursor-none text-2xl md:text-2xl text-white font-bold border-none hover:bg-black">
               Harsh
             </Button>
           </Popover>
@@ -104,7 +106,7 @@ const Navbar: React.FC = () => {
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              className="cursor-none flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
               aria-label="Open navigation menu"
             >
               <Bars3Icon className="h-5 w-5" />
@@ -112,7 +114,7 @@ const Navbar: React.FC = () => {
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              className="cursor-none flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
               aria-label="Close navigation menu"
             >
               <XMarkIcon className="h-5 w-5" />
@@ -130,7 +132,7 @@ const Navbar: React.FC = () => {
               <li key={index}>
                 <button
                   onClick={() => handleLinkClick(link.path)}
-                  className={`block text-white ${
+                  className={`cursor-none block text-white ${
                     activeLink === link.path ? "font-bold" : ""
                   } hover:text-gray-400`}
                 >

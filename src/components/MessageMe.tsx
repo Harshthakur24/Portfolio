@@ -10,22 +10,26 @@ const Container = styled.div`
   padding: 20px;
   max-width: 600px;
   margin: auto;
+  cursor: none;
 `;
 
 const Title = styled.h2`
   text-align: center;
+  cursor: none;
   margin-bottom: 20px;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  cursor: none;
   gap: 20px;
 `;
 
 const InputContainer = styled.div`
   position: relative;
   margin-bottom: 20px;
+  cursor: none;
 `;
 
 const Label = styled.label`
@@ -33,6 +37,7 @@ const Label = styled.label`
   top: -20px;
   left: 0;
   font-size: 12px;
+  cursor: none;
   color: #aaa;
 `;
 
@@ -44,6 +49,7 @@ const Input = styled.input`
   font-size: 16px;
   outline: none;
   transition: border-color 0.3s;
+  cursor: none;
 
   &:focus {
     border-bottom: 2px solid #007bff;
@@ -63,6 +69,7 @@ const Textarea = styled.textarea`
   outline: none;
   transition: border-color 0.3s;
   resize: none;
+  cursor: none;
 
   &:focus {
     border-bottom: 2px solid #007bff;
@@ -82,6 +89,7 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  cursor: none;
 
   &:hover {
     background-color: #0056b3;
@@ -92,12 +100,14 @@ const ResponseMessage = styled.p`
   text-align: center;
   font-size: 14px;
   color: #28a745;
+  cursor: none;
 `;
 
 const ErrorMessage = styled.p`
   text-align: center;
   font-size: 14px;
   color: #dc3545;
+  cursor: none;
 `;
 
 interface FormData {
@@ -193,12 +203,12 @@ const MessageMe: React.FC = () => {
               onChange={handleChange}
               placeholder="  Enter your name"
               required
-              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
+              className="cursor-none shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
             />
           </InputContainer>
           <InputContainer>
             <Label htmlFor="email">
-              <p className="-ml-[276px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[30px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
+              <p className="cursor-none -ml-[276px] mt-[20px] text-2xl px-4 md:text-2xl lg:text-[30px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center ">
                 and my Email is...
               </p>
             </Label>
@@ -224,11 +234,11 @@ const MessageMe: React.FC = () => {
               onChange={handleChange}
               placeholder="  Write your message"
               required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
+              className="cursor-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
             ></Textarea>
           </InputContainer>
           <Button
-            className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline"
+            className="transform transition duration-300 hover:scale-105 rounded focus:outline-none focus:shadow-outline cursor-none"
             type="submit"
           >
             Send
