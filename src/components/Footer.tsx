@@ -3,6 +3,13 @@ import React from "react";
 import { FaTwitter, FaInstagram, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Typography } from "antd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const { Paragraph, Text } = Typography;
 
@@ -13,7 +20,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col">
             <div className="flex items-center mb-4">
-              <p className="text-lg font-bold mr-4 mb-0">
+              <p className="text-lg font-bold mr-4 -mb-2">
                 Find and connect with me on:
               </p>
               <motion.div whileHover={{ scale: 1.02 }}>
@@ -39,7 +46,7 @@ const Footer: React.FC = () => {
                 </button>
               </motion.div>
             </div>
-            <div className="flex space-x-4 mb-4">
+            <div className="flex space-x-4 mb-4 -mt-2 gap-2">
               <motion.div whileHover={{ scale: 1.2 }}>
                 <button
                   onClick={() =>
@@ -47,7 +54,14 @@ const Footer: React.FC = () => {
                   }
                   className="cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
-                  <FaTwitter className="mr-2" /> Twitter
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    style={{
+                      color: "#1DA1F2",
+                      fontSize: "40px",
+                      marginLeft: "10px",
+                    }}
+                  />
                 </button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.2 }}>
@@ -60,7 +74,14 @@ const Footer: React.FC = () => {
                   }
                   className="cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
-                  <FaInstagram className="mr-2" /> Instagram
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    style={{
+                      color: "#d62976",
+                      fontSize: "40px",
+                      marginLeft: "10px",
+                    }}
+                  />
                 </button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.2 }}>
@@ -70,7 +91,14 @@ const Footer: React.FC = () => {
                   }
                   className="cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
-                  <FaGithub className="mr-2" /> GitHub
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    style={{
+                      color: "#9174e7",
+                      fontSize: "40px",
+                      marginLeft: "10px",
+                    }}
+                  />
                 </button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.2 }}>
@@ -83,11 +111,18 @@ const Footer: React.FC = () => {
                   }
                   className="cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
-                  <FaLinkedinIn className="mr-2" /> LinkedIn
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    style={{
+                      color: "#4784e6",
+                      fontSize: "40px",
+                      marginLeft: "10px",
+                    }}
+                  />
                 </button>
               </motion.div>
             </div>
-            <div className="h-1 -mt-2 mb-1">
+            <div className="h-1 -mt-1 mb-1">
               <Paragraph copyable className="cursor-none text-white flex">
                 <span>Email➡️</span>thakur2004harsh@gmail.com
               </Paragraph>
