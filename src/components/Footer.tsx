@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                     icon={faTwitter}
                     style={{
                       color: "#1DA1F2",
-                      fontSize: "40px",
+                      fontSize: "35px",
                       marginLeft: "10px",
                     }}
                   />
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                     icon={faInstagram}
                     style={{
                       color: "#d62976",
-                      fontSize: "40px",
+                      fontSize: "35px",
                       marginLeft: "10px",
                     }}
                   />
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
                     icon={faGithub}
                     style={{
                       color: "#9174e7",
-                      fontSize: "40px",
+                      fontSize: "35px",
                       marginLeft: "10px",
                     }}
                   />
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
                     icon={faLinkedin}
                     style={{
                       color: "#4784e6",
-                      fontSize: "40px",
+                      fontSize: "35px",
                       marginLeft: "10px",
                     }}
                   />

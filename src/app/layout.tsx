@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Router from 'next/router';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
+import Router from "next/router";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 
@@ -18,14 +17,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  
-
   return (
     <html className=" overflow-y-scroll no-scrollbar" lang="en">
-      <body className={inter.className}>
-
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
