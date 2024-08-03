@@ -3,26 +3,44 @@ import { CardStack } from "@/components/ui/card-stack";
 import { cn } from "@/utils/cn";
 import { useRef } from "react";
 import { motion, inView, useInView } from "framer-motion";
+import Image from "next/image";
+import { MessagePointer } from "./ui/message-pointer";
 
 function CardStackMessages() {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
   return (
-    <div className="h-[25rem] ml-[-263px] flex items-center justify-center ">
-      <motion.div
-        ref={ref}
-        initial={{ scale: 0 }}
-        animate={isInView ? { rotate: 360, scale: 1 } : {}}
-        transition={{
-          type: "spring",
-          stiffness: 30,
-          damping: 8,
-        }}
-      >
-        <CardStack items={CARDS} />
-      </motion.div>
-    </div>
+    <MessagePointer
+      title={
+        <div className="flex space-x-2 items-center">
+          {" "}
+          <Image
+            src="/logo.png"
+            height="20"
+            width="20"
+            alt="thumbnail"
+            className="rounded-full border-2 border-white"
+          />
+          <p>Some messages of viewers!</p>
+        </div>
+      }
+    >
+      <div className="h-[25rem] ml-[-263px] flex items-center justify-center ">
+        <motion.div
+          ref={ref}
+          initial={{ scale: 0 }}
+          animate={isInView ? { rotate: 360, scale: 1 } : {}}
+          transition={{
+            type: "spring",
+            stiffness: 30,
+            damping: 8,
+          }}
+        >
+          <CardStack items={CARDS} />
+        </motion.div>
+      </div>
+    </MessagePointer>
   );
 }
 
