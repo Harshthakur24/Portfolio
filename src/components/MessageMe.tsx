@@ -47,6 +47,7 @@ const Input = styled.input`
   border: none;
   border-bottom: 2px solid #ccc;
   font-size: 16px;
+  padding-left: 10px;
   outline: none;
   transition: border-color 0.3s;
   cursor: none;
@@ -69,6 +70,7 @@ const Textarea = styled.textarea`
   outline: none;
   transition: border-color 0.3s;
   resize: none;
+  padding-left: 10px;
   cursor: none;
 
   &:focus {
@@ -79,7 +81,6 @@ const Textarea = styled.textarea`
     border-bottom: 2px solid #0056b3;
   }
 `;
-
 const Button = styled.button`
   padding: 10px 20px;
   font-size: 16px;
@@ -201,7 +202,7 @@ const MessageMe: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="  Enter your name"
+              placeholder="Enter your name"
               required
               className="cursor-none shadow appearance-none border rounded w-full py-2 px-3 leading-tight text-gray-700  focus:outline-none focus:shadow-outline"
             />
@@ -232,7 +233,7 @@ const MessageMe: React.FC = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="  Write your message"
+              placeholder="Write your message"
               required
               className="cursor-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 resize-none"
             ></Textarea>
