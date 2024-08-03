@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                 </button>
               </motion.div>
             </div>
-            <div className="flex space-x-4 mb-4 -mt-2 gap-2">
+            <div className="flex space-x-4 -mt-2 gap-4">
               <motion.div whileHover={{ scale: 1.2 }}>
                 <button
                   onClick={() =>
@@ -122,15 +122,20 @@ const Footer: React.FC = () => {
                 </button>
               </motion.div>
             </div>
-            <div className="h-1 -mt-1 mb-1">
-              <Paragraph copyable className="cursor-none text-white flex">
-                <span>Email➡️</span>thakur2004harsh@gmail.com
-              </Paragraph>
+            <div className="flex -mb-8 mt-4">
+              <span>Email➡️</span>
+              <div className="">
+                <Paragraph copyable className="cursor-none text-white flex">
+                  thakur2004harsh@gmail.com
+                </Paragraph>
+              </div>
             </div>
           </div>
 
           <div className="flex items-end justify-end -mb-4">
-            <p className="text-sm">© 2024 Harsh Thakur. All rights reserved.</p>
+            <p className="text-sm -mr-2">
+              © Made with ❤️ by Harsh. Circa 2024. All rights reserved.
+            </p>
           </div>
         </div>
       </div>

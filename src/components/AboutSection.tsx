@@ -15,6 +15,7 @@ import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ButtonWrapper from "./ButtonWrapper";
+import { MessagePointer } from "./ui/message-pointer";
 
 const openProject = () => {
   const project_url = "https://storyandverse.netlify.app/";
@@ -124,21 +125,37 @@ const AboutSection: FC = () => {
 
   return (
     <section className="text-white mb-24">
-      <div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <MessagePointer
+        title={
+          <div className="flex space-x-2 items-center">
+            {" "}
+            <Image
+              src="/logo.png"
+              height="20"
+              width="20"
+              alt="thumbnail"
+              className="rounded-full border-2 border-white"
+            />
+            <p>These are my favourite quotes!</p>
+          </div>
+        }
+      >
+        <div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
+          <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
 
-        <Boxes />
-        <h1
-          className={
-            "md:text-6xl text-xl text-white relative z-20 text-6xl px-4 md:text-2xl lg:text-[37px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center"
-          }
-        >
-          {arr1[index1]}
-        </h1>
-        <p className="mt-[13px] text-center mt-2 text-neutral-300 relative z-20 font-bold text-white text-sm md:text-lg lg:text-[19px]">
-          {arr2[index2]}
-        </p>
-      </div>
+          <Boxes />
+          <h1
+            className={
+              "md:text-6xl text-xl text-white relative z-20 text-6xl px-4 md:text-2xl lg:text-[37px] font-bold text-white dark:text-white  leading-relaxed lg:leading-snug text-center"
+            }
+          >
+            {arr1[index1]}
+          </h1>
+          <p className="mt-[13px] text-center mt-2 text-neutral-300 relative z-20 font-bold text-white text-sm md:text-lg lg:text-[19px]">
+            {arr2[index2]}
+          </p>
+        </div>
+      </MessagePointer>
       <div
         id="about"
         className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
