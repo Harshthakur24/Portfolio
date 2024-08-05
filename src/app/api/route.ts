@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
+import nodemailer from "nodemailer";
 
-
-const MONGODB_URI = "mongodb+srv://thakur2004harsh:ZH7bsYIopVvPxEy7@cluster0.nrlnf26.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const MONGODB_URI = process.env.MONGODB_URI || "";
 
 interface IMessage extends Document {
   name: string;
@@ -30,6 +30,29 @@ const messageSchema = new mongoose.Schema<IMessage>({
   },
 });
 
+const sendEmail = async (name: string, email: string, message: string) => {
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "thakur2004harsh@gmail.com",
+      pass: "Jamthakurharsh2004",
+    },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: email,
+      to: "thakur2004harsh@gmail.com",
+      subject: `Message from ${name}`,
+      text: message,
+    });
+    console.log("Email sent successfully");
+  } catch (error) {
+    console.error("Error sending email:", error);
+  }
+};
 
 messageSchema.index({ email: 1, createdAt: -1 });
 
@@ -40,7 +63,6 @@ try {
 } catch {
   Message = mongoose.model<IMessage>("Message", messageSchema);
 }
-
 
 const connectToDatabase = async () => {
   if (!mongoose.connection.readyState) {
@@ -58,6 +80,7 @@ const handler = async (req: NextRequest) => {
 
   if (req.method === "POST") {
     const { name, email, message } = await req.json();
+    sendEmail(name, email, message);
 
     if (!name || !email || !message) {
       return NextResponse.json(
