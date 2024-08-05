@@ -32,6 +32,27 @@ const messageSchema = new mongoose.Schema<IMessage>({
   },
 });
 
+messageSchema.index({ email: 1, createdAt: -1 });
+
+let Message: Model<IMessage>;
+
+try {
+  Message = mongoose.model<IMessage>("Message");
+} catch {
+  Message = mongoose.model<IMessage>("Message", messageSchema);
+}
+
+const connectToDatabase = async () => {
+  if (!mongoose.connection.readyState) {
+    try {
+      await mongoose.connect(MONGODB_URI);
+      console.log("MongoDB connected");
+    } catch (error) {
+      console.error("MongoDB connection error:", error);
+    }
+  }
+};
+
 const sendEmail = async (name: string, email: string, message: string) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -55,33 +76,11 @@ const sendEmail = async (name: string, email: string, message: string) => {
   }
 };
 
-messageSchema.index({ email: 1, createdAt: -1 });
-
-let Message: Model<IMessage>;
-
-try {
-  Message = mongoose.model<IMessage>("Message");
-} catch {
-  Message = mongoose.model<IMessage>("Message", messageSchema);
-}
-
-const connectToDatabase = async () => {
-  if (!mongoose.connection.readyState) {
-    try {
-      await mongoose.connect(MONGODB_URI);
-      console.log("MongoDB connected");
-    } catch (error) {
-      console.error("MongoDB connection error:", error);
-    }
-  }
-};
-
 const handler = async (req: NextRequest) => {
   await connectToDatabase();
 
   if (req.method === "POST") {
     const { name, email, message } = await req.json();
-    sendEmail(name, email, message);
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -93,6 +92,7 @@ const handler = async (req: NextRequest) => {
     try {
       const newMessage = new Message({ name, email, message });
       await newMessage.save();
+      sendEmail(name, email, message);
       return NextResponse.json(
         { message: "Message sent successfully", data: { name, message } },
         { status: 201 }
