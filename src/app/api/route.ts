@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
-import nodemailer from "nodemailer";
 
 const MONGODB_URI = process.env.MONGODB_URI || "";
-const EMAIL_USER = process.env.EMAIL_USER || "";
-const EMAIL_PASS = process.env.EMAIL_PASS || "";
 
 interface IMessage extends Document {
   name: string;
@@ -53,29 +50,6 @@ const connectToDatabase = async () => {
   }
 };
 
-const sendEmail = async (name: string, email: string, message: string) => {
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: EMAIL_USER,
-      pass: EMAIL_PASS,
-    },
-  });
-
-  try {
-    await transporter.sendMail({
-      from: EMAIL_USER,
-      to: EMAIL_USER,
-      subject: `Message from ${name}`,
-      text: `From: ${email}\n\nMessage: ${message}`,
-    });
-    console.log("Email sent successfully");
-  } catch (error) {
-    console.error("Error sending email:", error);
-    throw error;
-  }
-};
-
 const handler = async (req: NextRequest) => {
   await connectToDatabase();
 
@@ -92,7 +66,6 @@ const handler = async (req: NextRequest) => {
     try {
       const newMessage = new Message({ name, email, message });
       await newMessage.save();
-      sendEmail(name, email, message);
       return NextResponse.json(
         { message: "Message sent successfully", data: { name, message } },
         { status: 201 }
