@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
-import nodemailer from "nodemailer";
 
 const MONGODB_URI =
   "mongodb+srv://thakur2004harsh:ZH7bsYIopVvPxEy7@cluster0.nrlnf26.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -52,31 +51,6 @@ const connectToDatabase = async () => {
   }
 };
 
-const sendEmail = async (name: string, email: string, message: string) => {
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: parseInt("smtp.gmail.com", 10),
-    secure: false,
-    auth: {
-      user: "thakur2004harsh@gmail.com",
-      pass: "Jamthakurharsh2004",
-    },
-  });
-
-  try {
-    await transporter.sendMail({
-      from: "thakur2004harsh@gmail.com",
-      to: "thakur2004harsh@gmail.com",
-      subject: `Message from ${name}`,
-      text: `You have received a new message from ${name} (${email}):\n\n${message}`,
-    });
-    console.log("Email sent successfully");
-  } catch (error) {
-    console.error("Error sending email:", error);
-    throw new Error("Error sending email");
-  }
-};
-
 const handler = async (req: NextRequest) => {
   await connectToDatabase();
 
@@ -93,15 +67,12 @@ const handler = async (req: NextRequest) => {
     try {
       const newMessage = new Message({ name, email, message });
       await newMessage.save();
-
-      await sendEmail(name, email, message);
-
       return NextResponse.json(
         { message: "Message sent successfully", data: { name, message } },
         { status: 201 }
       );
     } catch (error) {
-      console.error("Error:", error);
+      console.error("MongoDB Error:", error);
       return NextResponse.json(
         { message: "An error occurred. Please try again later." },
         { status: 500 }
