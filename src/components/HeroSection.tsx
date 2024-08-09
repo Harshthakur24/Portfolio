@@ -8,8 +8,6 @@ import { MessagePointer } from "./ui/message-pointer";
 
 function redirectToLinkedIn() {
   const linkedinURL = "https://www.linkedin.com/in/harsh-thakur-20877b246";
-  console.log(process.env.MONGODB_URI);
-
   window.open(linkedinURL), "_blank";
 }
 

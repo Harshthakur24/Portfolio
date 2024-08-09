@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
+require("dotenv").config();
 
 const MONGODB_URI = process.env.MONGODB_URI || "";
-console.log("MONGODB_URI:", MONGODB_URI);
 
 interface IMessage extends Document {
   name: string;
