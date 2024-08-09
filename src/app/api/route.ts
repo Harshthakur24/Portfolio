@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
 
 const MONGODB_URL = process.env.MONGODB_URI || "";
-console.log(process.env.MONGODB_URI);
+console.log("Mongo:-", process.env.MONGODB_URI);
 
 interface IMessage extends Document {
   name: string;
