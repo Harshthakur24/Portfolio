@@ -65,6 +65,7 @@ const handler = async (req: NextRequest) => {
     }
 
     try {
+      console.log("Mongo:-", process.env.MONGODB_URI);
       const newMessage = new Message({ name, email, message });
       await newMessage.save();
       return NextResponse.json(
@@ -73,6 +74,7 @@ const handler = async (req: NextRequest) => {
       );
     } catch (error) {
       console.error("MongoDB Error:", error);
+      console.log("Mongo:-", process.env.MONGODB_URI);
       return NextResponse.json(
         { message: "An error occurred. Please try again later." },
         { status: 500 }
