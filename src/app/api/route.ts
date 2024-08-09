@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
+require("dotenv").config();
 
 const MONGODB_URL = process.env.MONGODB_URI || "";
 console.log("Mongo:-", process.env.MONGODB_URI);
@@ -59,7 +60,7 @@ const handler = async (req: NextRequest) => {
 
     if (!name || !email || !message) {
       return NextResponse.json(
-        { message: "Name, email, and message are required" },
+        { message: "Name, email, and message are required", MONGODB_URL },
         { status: 400 }
       );
     }
