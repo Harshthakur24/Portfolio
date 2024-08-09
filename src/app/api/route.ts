@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI || "";
+const MONGODB_URL = process.env.MONGODB_URI || "";
+console.log(process.env.MONGODB_URI);
 
 interface IMessage extends Document {
   name: string;
@@ -42,7 +43,7 @@ try {
 const connectToDatabase = async () => {
   if (!mongoose.connection.readyState) {
     try {
-      await mongoose.connect(MONGODB_URI);
+      await mongoose.connect(MONGODB_URL);
       console.log("MongoDB connected");
     } catch (error) {
       console.error("MongoDB connection error:", error);
