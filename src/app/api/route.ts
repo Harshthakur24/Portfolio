@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import mongoose, { Document, Model } from "mongoose";
-require("dotenv").config();
 
-const MONGODB_URL = process.env.MONGODB_URI || "";
-console.log("Mongo:-", process.env.MONGODB_URI);
+const MONGODB_URI = process.env.MONGODB_URI || "";
+console.log("MONGODB_URI:", MONGODB_URI);
 
 interface IMessage extends Document {
   name: string;
@@ -37,17 +36,18 @@ let Message: Model<IMessage>;
 
 try {
   Message = mongoose.model<IMessage>("Message");
-} catch {
+} catch (error) {
   Message = mongoose.model<IMessage>("Message", messageSchema);
 }
 
 const connectToDatabase = async () => {
   if (!mongoose.connection.readyState) {
     try {
-      await mongoose.connect(MONGODB_URL);
+      await mongoose.connect(MONGODB_URI);
       console.log("MongoDB connected");
     } catch (error) {
       console.error("MongoDB connection error:", error);
+      throw error;
     }
   }
 };
@@ -56,26 +56,25 @@ const handler = async (req: NextRequest) => {
   await connectToDatabase();
 
   if (req.method === "POST") {
-    const { name, email, message } = await req.json();
-
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { message: "Name, email, and message are required", MONGODB_URL },
-        { status: 400 }
-      );
-    }
-
     try {
-      console.log("Mongo:-", process.env.MONGODB_URI);
+      const { name, email, message } = await req.json();
+
+      if (!name || !email || !message) {
+        return NextResponse.json(
+          { message: "Name, email, and message are required" },
+          { status: 400 }
+        );
+      }
+
       const newMessage = new Message({ name, email, message });
       await newMessage.save();
+
       return NextResponse.json(
         { message: "Message sent successfully", data: { name, message } },
         { status: 201 }
       );
     } catch (error) {
       console.error("MongoDB Error:", error);
-      console.log("Mongo:-", process.env.MONGODB_URI);
       return NextResponse.json(
         { message: "An error occurred. Please try again later." },
         { status: 500 }
