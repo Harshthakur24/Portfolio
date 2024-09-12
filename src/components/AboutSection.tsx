@@ -253,7 +253,7 @@ const AboutSection: FC = () => {
         </div>
       </div>
       <div id="skills"></div>
-      <div ref={ref}>
+      <div ref={ref} className="absolute inset-0 z-[-1]">
         <motion.div
           initial={{
             x: -750,
@@ -275,17 +275,17 @@ const AboutSection: FC = () => {
             duration: 6,
             ease: "easeOut",
           }}
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
           <Image
-            ref={ref}
             src="/flower.png"
-            alt=""
-            className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="Flower Animation"
             width={100}
             height={100}
           />
         </motion.div>
       </div>
+
       <div className="ml-36 -mt-24 ">
         <ButtonWrapper></ButtonWrapper>
       </div>

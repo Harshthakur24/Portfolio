@@ -132,14 +132,14 @@ export default function Projects() {
                   alt="thumbnail"
                   className="rounded-full border-2 border-white"
                 />
-                <p>Build this one in my College Hackathon</p>
+                <p>This is my 2nd year project.</p>
               </div>
             }
           >
             <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
               <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
                 <Image
-                  src="/image1.png"
+                  src="/chatlify.jpg"
                   alt="thumbnail"
                   height="600"
                   width="1200"
@@ -148,21 +148,20 @@ export default function Projects() {
               </div>
               <div className=" p-4">
                 <h2 className="font-bold my-4 text-lg text-zinc-700">
-                  StoryVerse
+                  Chatlify
                 </h2>
                 <h2 className="font-normal my-4 text-sm text-zinc-500">
-                  StoryVerse is a collaborative storytelling platform that
-                  enables users to co-create, share, and interact with dynamic
-                  narratives in real-time.
+                  A real-time communication platform designed to streamline
+                  interactions with responsive design and integrated websockets.
                 </h2>
                 <div className="flex flex-row justify-between items-center mt-10">
-                  <span className="text-sm text-gray-500">2022</span>
+                  <span className="text-sm text-gray-500">2023</span>
 
                   <motion.div whileHover={{ scale: 1.2 }}>
                     <button
                       onClick={(e) => {
                         window.open(
-                          "https://storyandverse.netlify.app/",
+                          "https://chatlify-d8oj.onrender.com/",
                           "_blank"
                         );
                       }}
@@ -189,14 +188,14 @@ export default function Projects() {
                   alt="thumbnail"
                   className="rounded-full border-2 border-white"
                 />
-                <p>Build this one in my College Hackathon</p>
+                <p>Made to help students do well in thier carrer.</p>
               </div>
             }
           >
             <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
               <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
                 <Image
-                  src="/image1.png"
+                  src="/velocity.jpg"
                   alt="thumbnail"
                   height="600"
                   width="1200"
@@ -205,21 +204,21 @@ export default function Projects() {
               </div>
               <div className=" p-4">
                 <h2 className="font-bold my-4 text-lg text-zinc-700">
-                  StoryVerse
+                  Velocity
                 </h2>
                 <h2 className="font-normal my-4 text-sm text-zinc-500">
-                  StoryVerse is a collaborative storytelling platform that
-                  enables users to co-create, share, and interact with dynamic
-                  narratives in real-time.
+                  A career growth app that empowers engineering students with
+                  tools and resources to accelerate skill development and
+                  professional advancement.
                 </h2>
                 <div className="flex flex-row justify-between items-center mt-10">
-                  <span className="text-sm text-gray-500">2022</span>
+                  <span className="text-sm text-gray-500">2024</span>
 
                   <motion.div whileHover={{ scale: 1.2 }}>
                     <button
                       onClick={(e) => {
                         window.open(
-                          "https://storyandverse.netlify.app/",
+                          "https://velocity-sign.vercel.app/",
                           "_blank"
                         );
                       }}
