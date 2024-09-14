@@ -1,6 +1,11 @@
 "use client";
 import { cn } from "@/utils/cn";
-import { useMotionValue, motion, useMotionTemplate, useInView } from "framer-motion";
+import {
+  useMotionValue,
+  motion,
+  useMotionTemplate,
+  useInView,
+} from "framer-motion";
 import React, { useRef } from "react";
 
 export const HeroHighlight = ({
@@ -26,9 +31,9 @@ export const HeroHighlight = ({
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
-  
+
   return (
-    <div 
+    <div
       className={cn(
         "relative h-[0rem] flex items-center bg-black dark:bg-black justify-center w-full group rounded-medium",
         containerClassName
@@ -55,7 +60,9 @@ export const HeroHighlight = ({
           `,
         }}
       />
-      <div className={cn("top-[-360px] relative z-20", className)}>{children}</div>
+      <div className={cn("top-[-360px] relative z-20", className)}>
+        {children}
+      </div>
     </div>
   );
 };
@@ -80,7 +87,7 @@ export const Highlight = ({
         backgroundSize: isInView ? "100% 100%" : "0% 100%",
       }}
       transition={{
-        duration: 3,
+        duration: 2,
         ease: "linear",
         delay: 0.5,
       }}

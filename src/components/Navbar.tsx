@@ -1,83 +1,52 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
-import { Button, ConfigProvider, Popover } from "antd";
-import { Typography } from "antd";
-import { Rate } from "antd";
+import { Button, Popover, Rate } from "antd";
+import { Fira_Code } from "next/font/google"; // Using next/font for Fira Code
 
-const { Paragraph, Text } = Typography;
+const firaCode = Fira_Code({ subsets: ["latin"], weight: ["400", "500"] });
 
-interface NavLinkType {
-  title: string;
-  path: string;
-}
-
-const navLinks: NavLinkType[] = [
-  {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Skills",
-    path: "#skills",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
+const navLinks = [
+  { title: "<Projects/>", path: "#project" },
+  { title: "<Skills/>", path: "#skills" },
+  { title: "<Contact/>", path: "#contact" },
 ];
 
 const Navbar: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [activeLink, setActiveLink] = useState<string>("");
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress }: any = useScroll();
+
+  // Navbar visibility on scroll
+  useMotionValueEvent(scrollYProgress, "change", (current: number) => {
+    setVisible(
+      scrollYProgress.get() < 0.1 || current < scrollYProgress.getPrevious()
+    );
+  });
+
+  // Popover content
   const content = (
-    <div>
-      <p className="font-medium">
-        Hello dear stranger, I made this website just for fun and for the sake
-        of building something cool by applying my engineering skills.
+    <div className={`${firaCode.className}`}>
+      <p>
+        I built this site to showcase my engineering skills. If you like it,
+        let&apos;s build something cool together. 🚀
       </p>
-      <p className="font-medium">
-        If you loved this website, I can make it for you too.🚀
-      </p>
-      <Rate></Rate>
+      <Rate allowHalf defaultValue={5} />
     </div>
   );
 
-  useMotionValueEvent(scrollYProgress, "change", (current: number) => {
-    if (typeof current === "number") {
-      const previous = scrollYProgress.getPrevious();
-      const direction = current - (previous || 0);
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(true);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
-    }
-  });
-
-  useEffect(() => {
-    setVisible(true);
-  }, []);
-
-  const handleLinkClick = (path: string) => {
+  const handleLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    path: string
+  ) => {
+    event.preventDefault();
     setNavbarOpen(false);
-    setActiveLink(path);
     const targetElement = document.querySelector(path);
     if (targetElement) {
-      window.scrollTo({
-        top: targetElement.getBoundingClientRect().top + window.scrollY - 70,
-        behavior: "smooth",
-      });
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -85,59 +54,47 @@ const Navbar: React.FC = () => {
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
-      exit={{ y: -100, opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 border-b border-[#33353F]"
+      className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-80 border-b border-gray-700 cursor-none"
     >
-      <div className="container flex flex-wrap items-center justify-between mx-auto px-4 py-2 lg:py-4">
-        <Link href="/">
-          <Popover
-            className="text-2xl md:text-2xl text-white font-bold border-none hover:bg-black"
-            placement="bottom"
-            title={"Something from me!"}
-            content={content}
+      <div className="container mx-auto flex justify-between items-center px-4 py-3 cursor-none">
+        <Popover placement="bottom" title="Hello!" content={content}>
+          <Button
+            className={`${firaCode.className} text-xl font-bold text-white bg-transparent border-none cursor-none`}
           >
-            <Button className="cursor-none text-2xl md:text-2xl text-white font-bold border-none hover:bg-black">
-              Harsh
-            </Button>
-          </Popover>
-        </Link>
-        <div className="block md:hidden">
-          {!navbarOpen ? (
-            <button
-              onClick={() => setNavbarOpen(true)}
-              className="cursor-none flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-              aria-label="Open navigation menu"
-            >
-              <Bars3Icon className="h-5 w-5" />
-            </button>
-          ) : (
-            <button
-              onClick={() => setNavbarOpen(false)}
-              className="cursor-none flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-              aria-label="Close navigation menu"
-            >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
-          )}
+            Harsh
+          </Button>
+        </Popover>
+
+        <div className="block md:hidden cursor-none">
+          <button
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            className="text-white cursor-none"
+            aria-label="Toggle navigation"
+          >
+            {navbarOpen ? (
+              <XMarkIcon className="h-6 w-6" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" />
+            )}
+          </button>
         </div>
+
         <div
           className={`${
             navbarOpen ? "block" : "hidden"
-          } md:block w-full md:w-auto`}
-          id="navbar"
+          } md:flex md:items-center cursor-none`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 p-4 md:p-0">
+          <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 hover:cursor-none md:mt-0 text-white">
             {navLinks.map((link, index) => (
-              <li key={index}>
-                <button
-                  onClick={() => handleLinkClick(link.path)}
-                  className={`cursor-none block text-white ${
-                    activeLink === link.path ? "font-bold" : ""
-                  } hover:text-gray-400`}
+              <li key={index} className="hover:text-gray-400 cursor-none">
+                <a
+                  href={link.path}
+                  onClick={(e) => handleLinkClick(e, link.path)}
+                  className={`${firaCode.className} text-base cursor-none`}
                 >
                   {link.title}
-                </button>
+                </a>
               </li>
             ))}
           </ul>
