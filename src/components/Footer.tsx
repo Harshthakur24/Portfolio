@@ -23,8 +23,11 @@ const Footer: React.FC = () => {
             <p className="text-lg font-bold mb-4">
               Find and connect with me on:
             </p>
-            <div className="flex space-x-10 mb-4">
-              <motion.div whileHover={{ scale: 1.1 }}>
+            <div className="flex space-x-10 mb-4 hover:cursor-none">
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="hover:cursor-none"
+              >
                 <button
                   onClick={() =>
                     window.open("https://x.com/HarshThaku44904", "_blank")
@@ -32,12 +35,16 @@ const Footer: React.FC = () => {
                   className="text-blue-400 hover:cursor-none hover:text-blue-500 transition duration-300 flex items-center"
                 >
                   <FontAwesomeIcon
+                    className="hover:cursor-none"
                     icon={faTwitter}
                     style={{ color: "#1DA1F2", fontSize: "38px" }}
                   />
                 </button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.1 }}>
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="hover:cursor-none"
+              >
                 <button
                   onClick={() =>
                     window.open(
@@ -48,12 +55,16 @@ const Footer: React.FC = () => {
                   className="hover:cursor-none text-blue-400 hover:text-blue-500 transition duration-300 flex items-center"
                 >
                   <FontAwesomeIcon
+                    className="hover:cursor-none"
                     icon={faInstagram}
                     style={{ color: "#d62976", fontSize: "38px" }}
                   />
                 </button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.1 }}>
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="hover:cursor-none"
+              >
                 <button
                   onClick={() =>
                     window.open("https://github.com/Harshthakur24", "_blank")
@@ -61,12 +72,16 @@ const Footer: React.FC = () => {
                   className="text-blue-400 hover:cursor-none hover:text-blue-500 transition duration-300 flex items-center"
                 >
                   <FontAwesomeIcon
+                    className="hover:cursor-none"
                     icon={faGithub}
                     style={{ color: "#9174e7", fontSize: "38px" }}
                   />
                 </button>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.1 }}>
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="hover:cursor-none"
+              >
                 <button
                   onClick={() =>
                     window.open(
@@ -77,6 +92,7 @@ const Footer: React.FC = () => {
                   className="text-blue-400 hover:cursor-none hover:text-blue-500 transition duration-300 flex items-center"
                 >
                   <FontAwesomeIcon
+                    className="hover:cursor-none"
                     icon={faLinkedin}
                     style={{ color: "#4784e6", fontSize: "38px" }}
                   />
