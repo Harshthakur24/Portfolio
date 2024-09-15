@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-10 mb-4 hover:cursor-none">
               <motion.div
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.2 }}
                 className="hover:cursor-none"
               >
                 <button
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                 </button>
               </motion.div>
               <motion.div
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.2 }}
                 className="hover:cursor-none"
               >
                 <button
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
                 </button>
               </motion.div>
               <motion.div
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.2 }}
                 className="hover:cursor-none"
               >
                 <button
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                 </button>
               </motion.div>
               <motion.div
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.2 }}
                 className="hover:cursor-none"
               >
                 <button
