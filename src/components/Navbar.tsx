@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 import { Button, Popover, Rate } from "antd";
-import { Fira_Code } from "next/font/google"; // Using next/font for Fira Code
+import { Fira_Code } from "next/font/google";
 
 const firaCode = Fira_Code({ subsets: ["latin"], weight: ["400", "500"] });
 
@@ -20,7 +20,6 @@ const Navbar: React.FC = () => {
   const [visible, setVisible] = useState(true);
   const { scrollYProgress }: any = useScroll();
 
-  // Navbar visibility on scroll
   useMotionValueEvent(scrollYProgress, "change", (current: number) => {
     setVisible(
       scrollYProgress.get() < 0.1 || current < scrollYProgress.getPrevious()

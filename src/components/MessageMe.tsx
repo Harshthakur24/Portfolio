@@ -11,6 +11,11 @@ const Container = styled.div`
   max-width: 600px;
   margin: auto;
   cursor: none;
+
+  @media (min-width: 1024px) {
+    margin-left: auto;
+    margin-right: 0; /* Moves to the right on desktop */
+  }
 `;
 
 const Title = styled.h2`

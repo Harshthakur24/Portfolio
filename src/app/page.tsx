@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
-import AboutSection from "@/components/AboutSection";
 import Navbar from "@/components/Navbar";
 import { Skills } from "@/components/Skills";
 import MessageMe from "@/components/MessageMe";
@@ -32,16 +31,16 @@ export default function Home() {
         <PointerCursor>
           <main className="flex min-h-screen flex-col bg-[#121212] cursor-none">
             <Navbar />
-            <div className="container mt-24 mx-auto px-12 py-4">
+            <div className="container mt-24 mx-auto px-4 py-4">
               <HeroSection />
-              {/* <AboutSection /> */}
               <Projects />
               <Skills />
-              <div className="flex">
-                <div className="flex-[0_0_100%]">
+
+              <div className="flex flex-col lg:flex-row lg:space-x-0 space-y-4 lg:space-y-0 justify-center">
+                <div className="w-full lg:w-[99.99%] lg:max-w-[620px] mx-auto">
                   <MessageMe />
                 </div>
-                <div className="flex-[0_0_1%]">
+                <div className="w-full mx-auto lg:w-[0.1%] lg:max-w-[600px]">
                   <CardStackMessages />
                 </div>
               </div>

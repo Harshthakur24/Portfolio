@@ -7,7 +7,7 @@ import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 
 export default function Projects() {
   return (
-    <div id="project">
+    <div id="project" className="px-4">
       <div className="mt-[530px] h-1 -mb-72">
         <HeroHighlight>
           <motion.h1
@@ -23,21 +23,22 @@ export default function Projects() {
               duration: 0.2,
               ease: [0.4, 0.0, 0.2, 1],
             }}
-            className="flex gap-4 text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
+            className="flex flex-col sm:flex-row gap-4 text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
           >
-            <div className="text-white">My</div>{" "}
+            <div className="text-white">My</div>
             <Highlight className="text-black dark:text-black">
               Projects
             </Highlight>
           </motion.h1>
         </HeroHighlight>
       </div>
-      <div className="flex gap-4 mt-4 mb-4">
-        <div className="w-80 mx-auto">
+
+      <div className="flex flex-col lg:flex-row gap-6 justify-center mt-4 mb-4">
+        {/* Project 1 */}
+        <div className="w-full sm:w-80 mx-auto">
           <FollowerPointerCard
             title={
               <div className="flex space-x-2 items-center">
-                {" "}
                 <Image
                   src="/logo.png"
                   height="20"
@@ -50,16 +51,16 @@ export default function Projects() {
             }
           >
             <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-              <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
+              <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                 <Image
                   src="/image1.png"
                   alt="thumbnail"
                   height="600"
                   width="1200"
-                  className={`group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200 `}
+                  className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
                 />
               </div>
-              <div className=" p-4">
+              <div className="p-4">
                 <h2 className="font-bold my-4 text-lg text-zinc-700">
                   StoryVerse
                 </h2>
@@ -73,7 +74,7 @@ export default function Projects() {
 
                   <motion.div whileHover={{ scale: 1.2 }}>
                     <button
-                      onClick={(e) => {
+                      onClick={() => {
                         window.open(
                           "https://storyandverse.netlify.app/",
                           "_blank"
@@ -90,11 +91,11 @@ export default function Projects() {
           </FollowerPointerCard>
         </div>
 
-        <div className="w-80 mx-auto">
+        {/* Project 2 */}
+        <div className="w-full sm:w-80 mx-auto">
           <FollowerPointerCard
             title={
               <div className="flex space-x-2 items-center">
-                {" "}
                 <Image
                   src="/logo.png"
                   height="20"
@@ -107,16 +108,16 @@ export default function Projects() {
             }
           >
             <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-              <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
+              <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                 <Image
                   src="/chatlify.jpg"
                   alt="thumbnail"
                   height="600"
                   width="1200"
-                  className={`group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200 `}
+                  className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
                 />
               </div>
-              <div className=" p-4">
+              <div className="p-4">
                 <h2 className="font-bold my-4 text-lg text-zinc-700">
                   Chatlify
                 </h2>
@@ -129,7 +130,7 @@ export default function Projects() {
 
                   <motion.div whileHover={{ scale: 1.2 }}>
                     <button
-                      onClick={(e) => {
+                      onClick={() => {
                         window.open(
                           "https://chatlify-d8oj.onrender.com/",
                           "_blank"
@@ -146,11 +147,11 @@ export default function Projects() {
           </FollowerPointerCard>
         </div>
 
-        <div className="w-80 mx-auto">
+        {/* Project 3 */}
+        <div className="w-full sm:w-80 mx-auto">
           <FollowerPointerCard
             title={
               <div className="flex space-x-2 items-center">
-                {" "}
                 <Image
                   src="/logo.png"
                   height="20"
@@ -158,21 +159,21 @@ export default function Projects() {
                   alt="thumbnail"
                   className="rounded-full border-2 border-white"
                 />
-                <p>Made to help students do well in thier carrer.</p>
+                <p>Made to help students do well in their career.</p>
               </div>
             }
           >
             <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-              <div className="w-full aspect-w-16 aspect-h-10 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
+              <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                 <Image
                   src="/velocity.jpg"
                   alt="thumbnail"
                   height="600"
                   width="1200"
-                  className={`group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200 `}
+                  className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
                 />
               </div>
-              <div className=" p-4">
+              <div className="p-4">
                 <h2 className="font-bold my-4 text-lg text-zinc-700">
                   Velocity
                 </h2>
@@ -186,7 +187,7 @@ export default function Projects() {
 
                   <motion.div whileHover={{ scale: 1.2 }}>
                     <button
-                      onClick={(e) => {
+                      onClick={() => {
                         window.open(
                           "https://velocity-sign.vercel.app/",
                           "_blank"

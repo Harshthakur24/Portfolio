@@ -83,7 +83,7 @@ export function Skills(): JSX.Element {
         </HeroHighlight>
       </div>
 
-      <div className="mt-[-240px] mb-[30px] bg-[#1a1a1a] text-white rounded-lg overflow-hidden p-6">
+      <div className="mx-8 mt-[-240px] mb-[30px] bg-[#1a1a1a] text-white rounded-lg overflow-hidden p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {Object.keys(skills).map((category) => (
             <div key={category}>
