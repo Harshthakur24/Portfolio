@@ -28,26 +28,28 @@ export default function Home() {
       {loading ? (
         <LoadingSpinner />
       ) : (
-        <PointerCursor>
-          <main className="flex min-h-screen flex-col bg-[#121212] cursor-none">
-            <Navbar />
-            <div className="container mt-24 mx-auto px-4 py-4">
-              <HeroSection />
-              <Projects />
-              <Skills />
+        <div>
+          <PointerCursor>
+            <main className="flex min-h-screen flex-col bg-[#121212] cursor-none">
+              <Navbar />
+              <div className="container mt-24 mx-auto px-4 py-4">
+                <HeroSection />
+                <Projects />
+                <Skills />
 
-              <div className="flex flex-col lg:flex-row lg:space-x-0 space-y-4 lg:space-y-0 justify-center">
-                <div className="w-full lg:w-[99.99%] lg:max-w-[620px] mx-auto">
-                  <MessageMe />
-                </div>
-                <div className="w-full mx-auto lg:w-[0.1%] lg:max-w-[600px]">
-                  <CardStackMessages />
+                <div className="flex flex-col lg:flex-row lg:space-x-0 space-y-4 lg:space-y-0 justify-center">
+                  <div className="w-full lg:w-[99.99%] lg:max-w-[620px] mx-auto">
+                    <MessageMe />
+                  </div>
+                  <div className="w-8/12 mx-auto lg:w-[0.1%] lg:max-w-[500px]">
+                    <CardStackMessages />
+                  </div>
                 </div>
               </div>
-            </div>
-            <Footer />
-          </main>
-        </PointerCursor>
+              <Footer />
+            </main>
+          </PointerCursor>
+        </div>
       )}
     </div>
   );

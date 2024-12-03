@@ -33,175 +33,290 @@ export default function Projects() {
         </HeroHighlight>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-6 justify-center mt-4 mb-4">
-        {/* Project 1 */}
-        <div className="w-full sm:w-80 mx-auto">
-          <FollowerPointerCard
-            title={
-              <div className="flex space-x-2 items-center">
-                <Image
-                  src="/logo.png"
-                  height="20"
-                  width="20"
-                  alt="thumbnail"
-                  className="rounded-full border-2 border-white"
-                />
-                <p>Build this one in my College Hackathon</p>
-              </div>
-            }
-          >
-            <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-              <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
-                <Image
-                  src="/image1.png"
-                  alt="thumbnail"
-                  height="600"
-                  width="1200"
-                  className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
-                />
-              </div>
-              <div className="p-4">
-                <h2 className="font-bold my-4 text-lg text-zinc-700">
-                  StoryVerse
-                </h2>
-                <h2 className="font-normal my-4 text-sm text-zinc-500">
-                  StoryVerse is a collaborative storytelling platform that
-                  enables users to co-create, share, and interact with dynamic
-                  narratives in real-time.
-                </h2>
-                <div className="flex flex-row justify-between items-center mt-10">
-                  <span className="text-sm text-gray-500">2022</span>
+      <div className="flex flex-col justify-center mb-4 gap-10 mt-4">
+        <div className="flex flex-col lg:flex-row gap-6 justify-center mt-4 mb-4">
+          {/* Project 1 */}
+          <div className="w-full sm:w-80 mx-auto">
+            <FollowerPointerCard
+              title={
+                <div className="flex space-x-2 items-center">
+                  <Image
+                    src="/logo.png"
+                    height="20"
+                    width="20"
+                    alt="thumbnail"
+                    className="rounded-full border-2 border-white"
+                  />
+                  <p>Build this one in my College Hackathon</p>
+                </div>
+              }
+            >
+              <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                  <Image
+                    src="/image1.png"
+                    alt="thumbnail"
+                    height="600"
+                    width="1200"
+                    className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                  />
+                </div>
+                <div className="p-4">
+                  <h2 className="font-bold my-4 text-lg text-zinc-700">
+                    StoryVerse
+                  </h2>
+                  <h2 className="font-normal my-4 text-sm text-zinc-500">
+                    StoryVerse is a collaborative storytelling platform that
+                    enables users to co-create, share, and interact with dynamic
+                    narratives in real-time.
+                  </h2>
+                  <div className="flex flex-row justify-between items-center mt-10">
+                    <span className="text-sm text-gray-500">2022</span>
 
-                  <motion.div whileHover={{ scale: 1.2 }}>
-                    <button
-                      onClick={() => {
-                        window.open(
-                          "https://storyandverse.netlify.app/",
-                          "_blank"
-                        );
-                      }}
-                      className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
-                    >
-                      Visit it
-                    </button>
-                  </motion.div>
+                    <motion.div whileHover={{ scale: 1.2 }}>
+                      <button
+                        onClick={() => {
+                          window.open(
+                            "https://storyandverse.netlify.app/",
+                            "_blank"
+                          );
+                        }}
+                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                      >
+                        Visit it
+                      </button>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </FollowerPointerCard>
+            </FollowerPointerCard>
+          </div>
+
+          {/* Project 2 */}
+          <div className="w-full sm:w-80 mx-auto">
+            <FollowerPointerCard
+              title={
+                <div className="flex space-x-2 items-center">
+                  <Image
+                    src="/logo.png"
+                    height="20"
+                    width="20"
+                    alt="thumbnail"
+                    className="rounded-full border-2 border-white"
+                  />
+                  <p>This is my 2nd year project.</p>
+                </div>
+              }
+            >
+              <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                  <Image
+                    src="/chatlify.jpg"
+                    alt="thumbnail"
+                    height="600"
+                    width="1200"
+                    className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                  />
+                </div>
+                <div className="p-4">
+                  <h2 className="font-bold my-4 text-lg text-zinc-700">
+                    Chatlify
+                  </h2>
+                  <h2 className="font-normal my-4 text-sm text-zinc-500">
+                    A real-time communication platform designed to streamline
+                    interactions with responsive design and integrated websockets.
+                  </h2>
+                  <div className="flex flex-row justify-between items-center mt-10">
+                    <span className="text-sm text-gray-500">2023</span>
+
+                    <motion.div whileHover={{ scale: 1.2 }}>
+                      <button
+                        onClick={() => {
+                          window.open(
+                            "https://chatlify-d8oj.onrender.com/",
+                            "_blank"
+                          );
+                        }}
+                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                      >
+                        Visit it
+                      </button>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </FollowerPointerCard>
+          </div>
+
+          {/* Project 3 */}
+          <div className="w-full sm:w-80 mx-auto">
+            <FollowerPointerCard
+              title={
+                <div className="flex space-x-2 items-center">
+                  <Image
+                    src="/logo.png"
+                    height="20"
+                    width="20"
+                    alt="thumbnail"
+                    className="rounded-full border-2 border-white"
+                  />
+                  <p>Made to help students do well in their career.</p>
+                </div>
+              }
+            >
+              <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                  <Image
+                    src="/velocity.jpg"
+                    alt="thumbnail"
+                    height="600"
+                    width="1200"
+                    className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                  />
+                </div>
+                <div className="p-4">
+                  <h2 className="font-bold my-4 text-lg text-zinc-700">
+                    Velocity
+                  </h2>
+                  <h2 className="font-normal my-4 text-sm text-zinc-500">
+                    A career growth app that empowers engineering students with
+                    tools and resources to accelerate skill development and
+                    professional advancement.
+                  </h2>
+                  <div className="flex flex-row justify-between items-center mt-10">
+                    <span className="text-sm text-gray-500">2024</span>
+
+                    <motion.div whileHover={{ scale: 1.2 }}>
+                      <button
+                        onClick={() => {
+                          window.open(
+                            "https://velocity-sign.vercel.app/",
+                            "_blank"
+                          );
+                        }}
+                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                      >
+                        Visit it
+                      </button>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </FollowerPointerCard>
+          </div>
         </div>
 
-        {/* Project 2 */}
-        <div className="w-full sm:w-80 mx-auto">
-          <FollowerPointerCard
-            title={
-              <div className="flex space-x-2 items-center">
-                <Image
-                  src="/logo.png"
-                  height="20"
-                  width="20"
-                  alt="thumbnail"
-                  className="rounded-full border-2 border-white"
-                />
-                <p>This is my 2nd year project.</p>
-              </div>
-            }
-          >
-            <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-              <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
-                <Image
-                  src="/chatlify.jpg"
-                  alt="thumbnail"
-                  height="600"
-                  width="1200"
-                  className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
-                />
-              </div>
-              <div className="p-4">
-                <h2 className="font-bold my-4 text-lg text-zinc-700">
-                  Chatlify
-                </h2>
-                <h2 className="font-normal my-4 text-sm text-zinc-500">
-                  A real-time communication platform designed to streamline
-                  interactions with responsive design and integrated websockets.
-                </h2>
-                <div className="flex flex-row justify-between items-center mt-10">
-                  <span className="text-sm text-gray-500">2023</span>
+        <div className="flex flex-col lg:flex-row gap-6 justify-center mt-4 mb-4">
 
-                  <motion.div whileHover={{ scale: 1.2 }}>
-                    <button
-                      onClick={() => {
-                        window.open(
-                          "https://chatlify-d8oj.onrender.com/",
-                          "_blank"
-                        );
-                      }}
-                      className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
-                    >
-                      Visit it
-                    </button>
-                  </motion.div>
+          {/* Project 4 */}
+          <div className="w-full sm:w-80 mx-auto">
+            <FollowerPointerCard
+              title={
+                <div className="flex space-x-2 items-center">
+                  <Image
+                    src="/logo.png"
+                    height="20"
+                    width="20"
+                    alt="thumbnail"
+                    className="rounded-full border-2 border-white"
+                  />
+                  <p>This is my freelance project which I built for a client.</p>
+                </div>
+              }
+            >
+              <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                  <Image
+                    src="/didmybit.jpg"
+                    alt="thumbnail"
+                    height="600"
+                    width="1200"
+                    className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                  />
+                </div>
+                <div className="p-4">
+                  <h2 className="font-bold my-4 text-lg text-zinc-700">
+                    DitMyBit
+                  </h2>
+                  <h2 className="font-normal my-4 text-sm text-zinc-500">
+                    This is webiste that helps people finding the Social Organization and NGO&apos;s all over the World and help them by providing support.
+                  </h2>
+                  <div className="flex flex-row justify-between items-center mt-10">
+                    <span className="text-sm text-gray-500">2022</span>
+
+                    <motion.div whileHover={{ scale: 1.2 }}>
+                      <button
+                        onClick={() => {
+                          window.open(
+                            "https://social-map-app-seven.vercel.app/",
+                            "_blank"
+                          );
+                        }}
+                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                      >
+                        Visit it
+                      </button>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </FollowerPointerCard>
-        </div>
+            </FollowerPointerCard>
+          </div>
 
-        {/* Project 3 */}
-        <div className="w-full sm:w-80 mx-auto">
-          <FollowerPointerCard
-            title={
-              <div className="flex space-x-2 items-center">
-                <Image
-                  src="/logo.png"
-                  height="20"
-                  width="20"
-                  alt="thumbnail"
-                  className="rounded-full border-2 border-white"
-                />
-                <p>Made to help students do well in their career.</p>
-              </div>
-            }
-          >
-            <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
-              <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
-                <Image
-                  src="/velocity.jpg"
-                  alt="thumbnail"
-                  height="600"
-                  width="1200"
-                  className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
-                />
-              </div>
-              <div className="p-4">
-                <h2 className="font-bold my-4 text-lg text-zinc-700">
-                  Velocity
-                </h2>
-                <h2 className="font-normal my-4 text-sm text-zinc-500">
-                  A career growth app that empowers engineering students with
-                  tools and resources to accelerate skill development and
-                  professional advancement.
-                </h2>
-                <div className="flex flex-row justify-between items-center mt-10">
-                  <span className="text-sm text-gray-500">2024</span>
+          {/* Project 5 */}
+          <div className="w-full sm:w-80 mx-auto">
+            <FollowerPointerCard
+              title={
+                <div className="flex space-x-2 items-center">
+                  <Image
+                    src="/logo.png"
+                    height="20"
+                    width="20"
+                    alt="thumbnail"
+                    className="rounded-full border-2 border-white"
+                  />
+                  <p>Build this one with my friend. My Personal Favourite.</p>
+                </div>
+              }
+            >
+              <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                  <Image
+                    src="/brevit.jpg"
+                    alt="thumbnail"
+                    height="600"
+                    width="1200"
+                    className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                  />
+                </div>
+                <div className="p-4">
+                  <h2 className="font-bold my-4 text-lg text-zinc-700">
+                    Brevit
+                  </h2>
+                  <h2 className="font-normal my-4 text-sm text-zinc-500">
+                    Brevit is an AI driven Social Media management tool to manage your Social Media.
+                  </h2>
+                  <div className="flex flex-row justify-between items-center mt-10">
+                    <span className="text-sm text-gray-500">2022</span>
 
-                  <motion.div whileHover={{ scale: 1.2 }}>
-                    <button
-                      onClick={() => {
-                        window.open(
-                          "https://velocity-sign.vercel.app/",
-                          "_blank"
-                        );
-                      }}
-                      className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
-                    >
-                      Visit it
-                    </button>
-                  </motion.div>
+                    <motion.div whileHover={{ scale: 1.2 }}>
+                      <button
+                        onClick={() => {
+                          window.open(
+                            "https://brevit.vercel.app/",
+                            "_blank"
+                          );
+                        }}
+                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                      >
+                        Visit it
+                      </button>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </FollowerPointerCard>
+            </FollowerPointerCard>
+          </div>
         </div>
       </div>
     </div>
