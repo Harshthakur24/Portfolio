@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { FollowerPointerCard } from "@/components/ui/following-pointer";
+import { FollowerPointerCard } from "./ui/following-pointer";
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 
@@ -81,7 +81,7 @@ export default function Projects() {
                             "_blank"
                           );
                         }}
-                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                        className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
                       >
                         Visit it
                       </button>
@@ -137,7 +137,7 @@ export default function Projects() {
                             "_blank"
                           );
                         }}
-                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                        className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
                       >
                         Visit it
                       </button>
@@ -194,7 +194,7 @@ export default function Projects() {
                             "_blank"
                           );
                         }}
-                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                        className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
                       >
                         Visit it
                       </button>
@@ -239,7 +239,7 @@ export default function Projects() {
                     DitMyBit
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    This is webiste that helps people finding the Social Organization and NGO&apos;s all over the World and help them by providing support.
+                    This is webiste that helps people finding the Social Organization and NGO&apos;s in thier neighbour as well as all over the World and help them by providing support.
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
                     <span className="text-sm text-gray-500">2022</span>
@@ -252,7 +252,7 @@ export default function Projects() {
                             "_blank"
                           );
                         }}
-                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                        className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
                       >
                         Visit it
                       </button>
@@ -294,7 +294,7 @@ export default function Projects() {
                     Brevit
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    Brevit is an AI driven Social Media management tool to manage your Social Media.
+                    Brevit is an AI-powered social media management tool designed to streamline and optimize the way businesses and individuals manage their social media.
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
                     <span className="text-sm text-gray-500">2022</span>
@@ -307,7 +307,64 @@ export default function Projects() {
                             "_blank"
                           );
                         }}
-                        className="cursor-none relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                        className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                      >
+                        Visit it
+                      </button>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </FollowerPointerCard>
+          </div>
+
+          {/* Project 6 */}
+          <div className="w-full sm:w-80 mx-auto">
+            <FollowerPointerCard
+              title={
+                <div className="flex space-x-2 items-center">
+                  <Image
+                    src="/logo.png"
+                    height="20"
+                    width="20"
+                    alt="thumbnail"
+                    className="rounded-full border-2 border-white"
+                  />
+                  <p>Build this one in my College Hackathon</p>
+                </div>
+              }
+            >
+              <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                  <Image
+                    src="/image1.png"
+                    alt="thumbnail"
+                    height="600"
+                    width="1200"
+                    className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                  />
+                </div>
+                <div className="p-4">
+                  <h2 className="font-bold my-4 text-lg text-zinc-700">
+                    StoryVerse
+                  </h2>
+                  <h2 className="font-normal my-4 text-sm text-zinc-500">
+                    StoryVerse is a collaborative storytelling platform that
+                    enables users to co-create, share, and interact with dynamic
+                    narratives in real-time.
+                  </h2>
+                  <div className="flex flex-row justify-between items-center mt-10">
+                    <span className="text-sm text-gray-500">2022</span>
+
+                    <motion.div whileHover={{ scale: 1.2 }}>
+                      <button
+                        onClick={() => {
+                          window.open(
+                            "https://storyandverse.netlify.app/",
+                            "_blank"
+                          );
+                        }}
+                        className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
                       >
                         Visit it
                       </button>

@@ -54,21 +54,21 @@ const Navbar: React.FC = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-80 border-b border-gray-700 cursor-none"
+      className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-80 border-b border-gray-700"
     >
-      <div className="container mx-auto flex justify-between items-center px-4 py-3 cursor-none">
+      <div className="container mx-auto flex justify-between items-center px-4 py-3">
         <Popover placement="bottom" title="Hello!" content={content}>
           <Button
-            className={`${firaCode.className} text-xl font-bold text-white bg-transparent border-none cursor-none`}
+            className={`${firaCode.className} text-xl font-bold text-white bg-transparent border-none`}
           >
             Harsh
           </Button>
         </Popover>
 
-        <div className="block md:hidden cursor-none">
+        <div className="block md:hidden">
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className="text-white cursor-none"
+            className="text-white"
             aria-label="Toggle navigation"
           >
             {navbarOpen ? (
@@ -80,17 +80,16 @@ const Navbar: React.FC = () => {
         </div>
 
         <div
-          className={`${
-            navbarOpen ? "block" : "hidden"
-          } md:flex md:items-center cursor-none`}
+          className={`${navbarOpen ? "block" : "hidden"
+            } md:flex md:items-center`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 hover:cursor-none md:mt-0 text-white">
+          <ul className="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 text-white">
             {navLinks.map((link, index) => (
-              <li key={index} className="hover:text-gray-400 cursor-none">
+              <li key={index} className="hover:text-gray-400">
                 <a
                   href={link.path}
                   onClick={(e) => handleLinkClick(e, link.path)}
-                  className={`${firaCode.className} text-base cursor-none`}
+                  className={`${firaCode.className} text-base`}
                 >
                   {link.title}
                 </a>
