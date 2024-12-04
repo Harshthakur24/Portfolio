@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Section */}
+          {/* Right Section. */}
           <div className="flex items-end justify-center md:justify-end">
             <p className="text-sm">
               © Made with ❤️ by Harsh. Circa 2024. All rights reserved.

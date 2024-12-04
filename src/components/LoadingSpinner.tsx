@@ -11,7 +11,7 @@ const SpinningLoader = () => {
   --size: 38px;
   --duration: 800ms;
   height: calc(var(--size) * 2);
-  width: calc(var(--size) * 3);z
+  width: calc(var(--size) * 3);
   position: relative;
   transform-style: preserve-3d;
   transform-origin: 50% 50%;

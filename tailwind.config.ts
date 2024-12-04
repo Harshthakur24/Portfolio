@@ -45,14 +45,7 @@ const config: Config = {
           },
           
         },
-        blink: {
-          '0%, 100%': { opacity: 1 }, // Fully visible at start and end
-          '50%': { opacity: 0 },      // Hidden at midpoint
-        },
-      },
-      animation: {
-        blink: 'blink 1s steps(1, start) infinite', // Duration: 1s, infinite loop
-      },
+      },    
     },
   },
   darkMode: "class",
