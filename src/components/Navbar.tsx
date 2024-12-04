@@ -28,12 +28,12 @@ const Navbar: React.FC = () => {
 
   // Popover content
   const content = (
-    <div className={`${firaCode.className}`}>
+    <div className={`${firaCode.className} items-center`}>
       <p>
         I built this site to showcase my engineering skills. If you like it,
-        let&apos;s build something cool together. 🚀
+        let&apos;s build something cool together.🚀
       </p>
-      <Rate allowHalf defaultValue={5} />
+      Rate my website vibes!{" "}<Rate allowHalf defaultValue={0} />
     </div>
   );
 
