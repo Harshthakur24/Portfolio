@@ -40,6 +40,7 @@ const HeroSection = () => {
                 ]}
                 wrapper="span"
                 speed={50}
+                className="font-playfair text-white"
                 repeat={Infinity}
               />
             </span>
