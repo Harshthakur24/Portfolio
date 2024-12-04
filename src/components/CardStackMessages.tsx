@@ -11,6 +11,7 @@ function CardStackMessages() {
   const isInView = useInView(ref);
 
   return (
+    
     <MessagePointer
       title={
         <div className="flex space-x-2 items-center">
@@ -41,6 +42,7 @@ function CardStackMessages() {
         </motion.div>
       </div>
     </MessagePointer>
+    
   );
 }
 

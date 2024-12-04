@@ -37,11 +37,11 @@ export default function Home() {
             <Projects />
             <Skills />
 
-            <div className="flex flex-col lg:flex-row lg:space-x-0 space-y-4 lg:space-y-0 justify-center">
+            <div className="flex flex-col lg:flex-row lg:space-x-0 space-y-2 lg:space-y-0 justify-center overflow-hidden mb-6 md:mb-2 lg:mb-4">
               <div className="w-full lg:w-[99.99%] lg:max-w-[620px] mx-auto">
                 <MessageMe />
               </div>
-              <div className="w-8/12 mx-auto lg:w-[0.1%] lg:max-w-[500px]">
+              <div className="w-8/12 mx-auto lg:w-[0.1%] lg:max-w-[500px] ml-20">
                 <CardStackMessages />
               </div>
             </div>

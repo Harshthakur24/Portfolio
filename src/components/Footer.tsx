@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                 whileHover={{ scale: 1.2 }}
                 className=""
               >
-                <a
+                <button
                   onClick={() =>
                     window.open("https://x.com/HarshThaku44904", "_blank")
                   }
@@ -42,13 +42,13 @@ const Footer: React.FC = () => {
                     icon={faTwitter}
                     style={{ color: "#1DA1F2", fontSize: "38px" }}
                   />
-                </a>
+                </button>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.2 }}
 
               >
-                <a
+                <button
                   onClick={() =>
                     window.open(
                       "https://www.instagram.com/thakurharsh.24/",
@@ -62,13 +62,13 @@ const Footer: React.FC = () => {
                     icon={faInstagram}
                     style={{ color: "#d62976", fontSize: "38px" }}
                   />
-                </a>
+                </button>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.2 }}
 
               >
-                <a
+                <button
                   onClick={() =>
                     window.open("https://github.com/Harshthakur24", "_blank")
                   }
@@ -79,14 +79,14 @@ const Footer: React.FC = () => {
                     icon={faGithub}
                     style={{ color: "#9174e7", fontSize: "38px" }}
                   />
-                </a>
+                </button>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.2 }}
 
               >
 
-                <a
+                <button
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/in/harsh-thakur-20877b246/",
@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
                     icon={faLinkedin}
                     style={{ color: "#4784e6", fontSize: "38px" }}
                   />
-                </a>
+                </button>
 
               </motion.div>
             </div>

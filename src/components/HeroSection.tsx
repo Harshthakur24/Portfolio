@@ -35,7 +35,7 @@ const HeroSection = () => {
                   1000,
                   "CS Student",
                   1000,
-                  "Fullstack developer!",
+                  "Fullstack developer",
                   1000,
                 ]}
                 wrapper="span"
@@ -59,7 +59,7 @@ const HeroSection = () => {
               <button
                 onClick={() => {
                   window.open(
-                    "https://drive.google.com/file/d/1zdjPdHaNdwSQ-FZbAcB1N04RuBnGoIOW/view?usp=sharing",
+                    "https://drive.google.com/file/d/1qLk7OgyGQXdZuqUjxrBewpAH9VY93-1y/view?usp=sharing",
                     "_blank"
                   );
                 }}
