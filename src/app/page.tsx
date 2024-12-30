@@ -7,6 +7,7 @@ import { Skills } from "@/components/Skills";
 import MessageMe from "@/components/MessageMe";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import CardStackMessages from "@/components/CardStackMessages";
+import { WorkExperience } from "@/components/WorkExperience";
 import Projects from "@/components/Projects";
 import { PointerCursor } from "@/components/ui/pointer-cursor";
 
@@ -36,6 +37,7 @@ export default function Home() {
             <HeroSection />
             <Projects />
             <Skills />
+            <WorkExperience />
 
             <div className="flex flex-col lg:flex-row lg:space-x-0 space-y-2 lg:space-y-0 justify-center overflow-hidden mb-6 md:mb-2 lg:mb-4">
               <div className="w-full lg:w-[99.99%] lg:max-w-[620px] mx-auto">

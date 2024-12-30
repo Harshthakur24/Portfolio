@@ -66,7 +66,7 @@ const techIcons: { [key: string]: JSX.Element } = {
 
 export function Skills(): JSX.Element {
   return (
-    <div>
+    <div id="skills">
       <div className="mt-[570px] h-1 mb-[0px]">
         <HeroHighlight>
           <motion.h1

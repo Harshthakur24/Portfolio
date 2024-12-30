@@ -13,6 +13,7 @@ const navLinks = [
   { title: "<Projects/>", path: "#project" },
   { title: "<Skills/>", path: "#skills" },
   { title: "<Contact/>", path: "#contact" },
+  { title: "<WorkExperience/>", path: "#workExperience" },
 ];
 
 const Navbar: React.FC = () => {
@@ -30,8 +31,7 @@ const Navbar: React.FC = () => {
   const content = (
     <div className={`${firaCode.className} items-center`}>
       <p>
-        I built this site to showcase my engineering skills. If you like it,
-        let&apos;s build something cool together.🚀
+        &quot;I built this site to showcase my engineering skills. If you like this webiste and want to have one, feel free to contact me.&quot; 🚀
       </p>
       Rate my website vibes!{" "}<Rate allowHalf defaultValue={0} />
     </div>
