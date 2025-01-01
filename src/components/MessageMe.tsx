@@ -151,6 +151,11 @@ const MessageMe: React.FC = () => {
         "https://harsh-thakur.vercel.app/api",
         formData
       );
+      const response_email = await axios.post("/api/send", {
+        email: formData.email,
+        subject: `Message from ${formData.name}`,
+        message: formData.message,
+      });
 
       if (response.status === 201) {
         console.log("Message sent!");
