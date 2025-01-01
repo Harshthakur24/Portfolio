@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 
-const resend = new Resend("re_UPXzG95P_FkNTLMz9WduiaPNEq7uNXEzR");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -21,11 +21,9 @@ export async function POST(req: Request) {
       `,
     });
 
-    console.log("Resend response:", data); // Debug log
     return NextResponse.json(data);
     
   } catch (error) {
-    console.error("Detailed error:", error); // Debug log
     return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
   }
 }
