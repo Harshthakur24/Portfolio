@@ -396,7 +396,7 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>Build this one to get good internship</p>
+                  <p>Finally, a PDF reader that&apos;s smarter than your coffee machine</p>
                 </div>
               }
             >
