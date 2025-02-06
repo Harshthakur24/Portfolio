@@ -453,7 +453,7 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>Developed a Comprehensive Website for a Government-Outsourced Car Scrapping Company.</p>
+                  <p>Website for a Government-Outsourced Car Scrapping Company.</p>
                 </div>
               }
             >
@@ -481,7 +481,7 @@ export default function Projects() {
                       <a
                         onClick={() => {
                           window.open(
-                            "https://ecoelv.in/",
+                            "https://black-mining-portfolio.vercel.app/",
                             "_blank"
                           );
                         }}
