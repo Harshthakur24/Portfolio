@@ -60,7 +60,7 @@ const HeroSection = () => {
               <button
                 onClick={() => {
                   window.open(
-                    "https://drive.google.com/file/d/1qLk7OgyGQXdZuqUjxrBewpAH9VY93-1y/view?usp=sharing",
+                    "https://drive.google.com/file/d/1g6uQVDwH1dMjIncW_XM72YdL6t4zoSIj/view",
                     "_blank"
                   );
                 }}
