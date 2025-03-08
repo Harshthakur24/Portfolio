@@ -14,9 +14,9 @@ I'm Harsh Thakur, a passionate Full Stack Developer specializing in building sca
 Check out my portfolio website: [harsh-thakur.vercel.app](https://harsh-thakur.vercel.app)
 
 ## 📬 Contact Me
-- LinkedIn: [linkedin.com/in/harsh-thakur](https://linkedin.com/in/harsh-thakur)
-- Email: harsh.thakur@example.com
-- GitHub: [github.com/harsh-thakur](https://github.com/harsh-thakur)
+- LinkedIn: [linkedin.com/in/harsh-thakur](https://www.linkedin.com/in/harsh-thakur-20877b246/)
+- Email: thakur2004harsh@gmail.com
+- GitHub: [github.com/harsh-thakur](https://github.com/Harshthakur24)
 
 ## 💡 Contributing
 Feel free to explore my projects, suggest improvements, or contribute via pull requests. Any feedback is highly appreciated!
