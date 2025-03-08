@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
 import { AutoComplete, notification } from "antd";
 import type { DefaultOptionType } from "antd/es/select";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast"; 
 
 const Container = styled.div`
   padding: 20px;
@@ -139,7 +139,6 @@ const MessageMe: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setFormData({ name: "", email: "", message: "" });
     
     try {
       const messagewait = toast.loading("Sending message...");
@@ -163,11 +162,11 @@ const MessageMe: React.FC = () => {
   
         toast.dismiss(messagewait);
         setFormData({ name: "", email: "", message: "" });
-  
-        notification.success({
-          message: "Success",
-          description: "Message sent successfully! Thank you for messaging.",
-        });
+    
+      notification.success({
+        message: "Success",
+        description: "Message sent successfully! Thank you for messaging.",
+      });
   
         console.log("Message sent!");
       } else {
@@ -176,15 +175,17 @@ const MessageMe: React.FC = () => {
           message: "Error",
           description: "Failed to send message. Please try again later.",
         });
+  
       }
     } catch (error) {
-      toast.dismiss();
+      toast.dismiss(); 
       console.error("Error submitting message:", error);
       
       notification.error({
         message: "Error",
         description: "Failed to send message. Please try again later.",
       });
+
     }
   };
 
@@ -208,6 +209,9 @@ const MessageMe: React.FC = () => {
 
   return (
     <div id="contact">
+      {/* Add the Toaster component to render toast notifications */}
+      <Toaster position="top-center" />
+      
       <Container>
         <Title className="text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto">
           <Highlight className="text-black dark:text-black">
