@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
 import { AutoComplete, notification } from "antd";
 import type { DefaultOptionType } from "antd/es/select";
+import toast from "react-hot-toast";
 
 const Container = styled.div`
   padding: 20px;
@@ -139,34 +140,47 @@ const MessageMe: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => {
-      notification.success({
-        message: "Success",
-        description: "Message sent successfully! Thank you for messaging.",
-      });
-    }, 750);
-
+    
     try {
+      const messagewait = toast.loading("Sending message...");
+      
       const response = await axios.post(
         "https://harsh-thakur.vercel.app/api",
         formData
       );
-      const response_email = await axios.post("/api/send", {
-        email: formData.email,
-        subject: `Message from ${formData.name}`,
-        message: formData.message,
-      });
-
+  
       if (response.status === 201) {
+        
+        try {
+          await axios.post("/api/send", {
+            email: formData.email,
+            subject: `Message from ${formData.name}`,
+            message: formData.message,
+          });
+        } catch (emailError) {
+          console.error("Error sending confirmation email:", emailError);
+        }
+  
+        toast.dismiss(messagewait);
+        setFormData({ name: "", email: "", message: "" });
+  
+        notification.success({
+          message: "Success",
+          description: "Message sent successfully! Thank you for messaging.",
+        });
+  
         console.log("Message sent!");
       } else {
+        toast.dismiss(messagewait);
         notification.error({
           message: "Error",
           description: "Failed to send message. Please try again later.",
         });
       }
     } catch (error) {
+      toast.dismiss();
       console.error("Error submitting message:", error);
+      
       notification.error({
         message: "Error",
         description: "Failed to send message. Please try again later.",
