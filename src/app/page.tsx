@@ -10,6 +10,7 @@ import CardStackMessages from "@/components/CardStackMessages";
 import { WorkExperience } from "@/components/WorkExperience";
 import Projects from "@/components/Projects";
 import { PointerCursor } from "@/components/ui/pointer-cursor";
+import connectToDatabase from "@/utils/dbconnect";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,8 @@ export default function Home() {
 
     return () => clearTimeout(timeout);
   }, []);
+
+  connectToDatabase();
 
   return (
     <div className="scroll-smooth">

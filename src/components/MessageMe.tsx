@@ -209,7 +209,6 @@ const MessageMe: React.FC = () => {
 
   return (
     <div id="contact">
-      {/* Add the Toaster component to render toast notifications */}
       <Toaster position="top-center" />
       
       <Container>
