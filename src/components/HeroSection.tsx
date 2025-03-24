@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Button } from "antd";
 
 function redirectToLinkedIn() {
-  const linkedinURL = "https://www.linkedin.com/in/harsh-thakur-20877b246";
+  const linkedinURL = "https://www.linkedin.com/in/harsh-thakur24/";
   window.open(linkedinURL, "_blank");
 }
 
