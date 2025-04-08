@@ -40,7 +40,8 @@ try {
 }
 
 const connectToDatabase = async () => {
-  if (!mongoose.connection.readyState) {
+  
+  if (mongoose.connection && mongoose.connection.readyState !== 1) {
     try {
       await mongoose.connect(MONGODB_URI);
       console.log("MongoDB connected");

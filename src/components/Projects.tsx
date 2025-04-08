@@ -330,14 +330,14 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>Build this one in my College Hackathon</p>
+                  <p>Build this one in my Hackaccino 3.0 Hackathon</p>
                 </div>
               }
             >
               <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
                 <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                   <Image
-                    src="/image1.png"
+                    src="/medileger.jpg"
                     alt="thumbnail"
                     height="600"
                     width="1200"
@@ -346,21 +346,21 @@ export default function Projects() {
                 </div>
                 <div className="p-4">
                   <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
-                    StoryVerse<span>⭐⭐</span>
+                    Medileger<span>⭐⭐⭐⭐⭐⭐</span>
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    StoryVerse is a collaborative storytelling platform that
-                    enables users to co-create, share, and interact with dynamic
-                    narratives in real-time.
+                    MediChain helps hospitals coordinate medicine shortages and surpluses in real-time, making critical drug sharing faster and more efficient.
+
+
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
-                    <span className="text-sm text-gray-500">2022</span>
+                    <span className="text-sm text-gray-500">2025</span>
 
                     <motion.div whileHover={{ scale: 1.2 }}>
                       <a
                         onClick={() => {
                           window.open(
-                            "https://storyandverse.netlify.app/",
+                            "https://medichain01.vercel.app/",
                             "_blank"
                           );
                         }}
