@@ -4,11 +4,22 @@ import Image from "next/image";
 import { FollowerPointerCard } from "@/components/ui/following-pointer";
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import Link from "next/link";
 
 export default function Projects() {
     return (
         <main className="flex min-h-screen flex-col bg-[#121212]">
             <div id="" className="container mt-6 mx-auto px-4 py-4">
+                <Link href="/">
+                    <motion.div className="flex justify-start mt-4 ml-8">
+                        <motion.button
+                            whileHover={{ scale: 1.2 }}
+                            className="bg-blue-500 text-white px-5 py-3 rounded-full hover:bg-blue-600 transition-colors hover:scale-110 duration-300 hover:shadow-lg"
+                        >
+                            &lt;- Back
+                        </motion.button>
+                    </motion.div>
+                </Link>
                 <div className="flex justify-center items-center">
 
                     <h1 className="flex flex-col sm:flex-row mb-6 gap-4 text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
