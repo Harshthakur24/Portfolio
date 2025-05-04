@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { FollowerPointerCard } from "./ui/following-pointer";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 
 export default function Projects() {
@@ -159,15 +160,15 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>Build this one with my friend. My Personal Favourite.</p>
+                  <p>A real-time video chat platform inspired by Omegle</p>
                 </div>
               }
             >
               <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
                 <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                   <Image
-                    src="/brevit.jpg"
-                    alt="thumbnail"
+                    src="/openmeet.jpg"
+                    alt="OpenMeet thumbnail"
                     height="600"
                     width="1200"
                     className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
@@ -175,19 +176,19 @@ export default function Projects() {
                 </div>
                 <div className="p-4">
                   <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
-                    Brevit<span>⭐⭐⭐⭐⭐</span>
+                    OpenMeet <span>⭐⭐⭐⭐⭐</span>
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    Brevit is an AI-powered social media management tool designed to streamline and optimize the way businesses and individuals manage their social media.
+                    OpenMeet is a real-time video chat platform letting users instantly connect for conversations with strangers worldwide, built with WebRTC and socket technology.
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
-                    <span className="text-sm text-gray-500">2024</span>
+                    <span className="text-sm text-gray-500">2025</span>
 
                     <motion.div whileHover={{ scale: 1.2 }}>
                       <a
                         onClick={() => {
                           window.open(
-                            "https://brevit.vercel.app/",
+                            "https://open-meet.vercel.app/",
                             "_blank"
                           );
                         }}
@@ -552,7 +553,18 @@ export default function Projects() {
           </div>
 
         </div>
+
       </div>
+      <Link href="/all-projects">
+        <motion.div className="flex justify-end mt-4 mr-8">
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            className="bg-blue-500 text-white px-5 py-3 rounded-full hover:bg-blue-600 transition-colors hover:scale-110 duration-300 hover:shadow-lg"
+          >
+            See All Projects -&gt;
+          </motion.button>
+        </motion.div>
+      </Link>
     </div>
   );
 }
