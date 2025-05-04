@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Highlight } from "./ui/hero-highlight";
 import { AutoComplete, notification } from "antd";
 import type { DefaultOptionType } from "antd/es/select";
-import toast, { Toaster } from "react-hot-toast"; 
+import toast, { Toaster } from "react-hot-toast";
 
 const Container = styled.div`
   padding: 20px;
@@ -139,18 +139,26 @@ const MessageMe: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
+
     try {
       const messagewait = toast.loading("Sending message...");
-      
+
       const response = await axios.post(
-        "https://harsh-thakur.vercel.app/api",
+        "/api",
         formData
       );
-  
+
       if (response.status === 201) {
-        
+
         try {
+          toast.dismiss(messagewait);
+          setFormData({ name: "", email: "", message: "" });
+
+          notification.success({
+            message: "Success",
+            description: "Message sent successfully! Thank you for messaging.",
+          });
+
           await axios.post("/api/send", {
             email: formData.email,
             subject: `Message from ${formData.name}`,
@@ -159,15 +167,10 @@ const MessageMe: React.FC = () => {
         } catch (emailError) {
           console.error("Error sending confirmation email:", emailError);
         }
-  
-        toast.dismiss(messagewait);
-        setFormData({ name: "", email: "", message: "" });
-    
-      notification.success({
-        message: "Success",
-        description: "Message sent successfully! Thank you for messaging.",
-      });
-  
+
+
+
+
         console.log("Message sent!");
       } else {
         toast.dismiss(messagewait);
@@ -175,12 +178,12 @@ const MessageMe: React.FC = () => {
           message: "Error",
           description: "Failed to send message. Please try again later.",
         });
-  
+
       }
     } catch (error) {
-      toast.dismiss(); 
+      toast.dismiss();
       console.error("Error submitting message:", error);
-      
+
       notification.error({
         message: "Error",
         description: "Failed to send message. Please try again later.",
@@ -210,7 +213,7 @@ const MessageMe: React.FC = () => {
   return (
     <div id="contact">
       <Toaster position="top-center" />
-      
+
       <Container>
         <Title className="text-2xl px-4 md:text-3xl lg:text-[60px] font-bold text-white-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto">
           <Highlight className="text-black dark:text-black">
