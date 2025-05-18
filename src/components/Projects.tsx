@@ -556,10 +556,10 @@ export default function Projects() {
 
       </div>
       <Link href="/all-projects">
-        <motion.div className="flex justify-end mt-4 mr-8">
+        <motion.div className="flex justify-center mt-6 mr-8">
           <motion.button
             whileHover={{ scale: 1.2 }}
-            className="bg-blue-500 text-white px-5 py-3 rounded-full hover:bg-blue-600 transition-colors hover:scale-110 duration-300 hover:shadow-lg"
+            className="bg-blue-500 text-white px-6 py-5 rounded-full hover:bg-blue-600 transition-colors hover:scale-110 duration-300 hover:shadow-lg"
           >
             See All Projects -&gt;
           </motion.button>
