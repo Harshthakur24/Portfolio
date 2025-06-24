@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                 <button
                   onClick={() =>
                     window.open(
-                      "https://www.linkedin.com/in/harsh-thakur24/",
+                      "https://www.linkedin.com/in/harshthakur76/",
                       "_blank"
                     )
                   }
