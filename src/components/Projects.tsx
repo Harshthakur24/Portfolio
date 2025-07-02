@@ -48,14 +48,14 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>IIIT-D Hackathon Winning AI Powered Website.</p>
+                  <p>This is a whiteboard app.</p>
                 </div>
               }
             >
               <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
                 <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                   <Image
-                    src="/nutriwise.jpg"
+                    src="/sketchify.jpg"
                     alt="thumbnail"
                     height="600"
                     width="1200"
@@ -64,19 +64,19 @@ export default function Projects() {
                 </div>
                 <div className="p-4">
                   <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
-                    Nutriwise-AI <span>⭐⭐⭐⭐⭐⭐</span>
+                    Sketchify <span>⭐⭐⭐⭐⭐⭐</span>
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    NutriEase is an AI-powered website designed to simplify personalized nutrition by offering tailored meal plans, calorie tracking, and interactive dashboards.
+                    Sketchify is a creative web-based application that enables users to draw, doodle, and create digital sketches with ease and also live share it with others.
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
-                    <span className="text-sm text-gray-500">2024</span>
+                    <span className="text-sm text-gray-500">2025</span>
 
                     <motion.div whileHover={{ scale: 1.2 }}>
                       <a
                         onClick={() => {
                           window.open(
-                            "https://nutriwise.vercel.app/",
+                            "https://sketchify-three.vercel.app/",
                             "_blank"
                           );
                         }}
@@ -90,6 +90,7 @@ export default function Projects() {
               </div>
             </FollowerPointerCard>
           </div>
+
 
           {/* Project 2 */}
 
@@ -218,14 +219,14 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>This is my 2nd year project.</p>
+                  <p>IIIT-D Hackathon Winning AI Powered Website.</p>
                 </div>
               }
             >
               <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
                 <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                   <Image
-                    src="/chatlify.jpg"
+                    src="/nutriwise.jpg"
                     alt="thumbnail"
                     height="600"
                     width="1200"
@@ -234,20 +235,19 @@ export default function Projects() {
                 </div>
                 <div className="p-4">
                   <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
-                    Chatlify<span>⭐⭐⭐</span>
+                    Nutriwise-AI <span>⭐⭐⭐⭐⭐⭐</span>
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    A real-time communication platform designed to streamline
-                    interactions with responsive design and integrated websockets.
+                    NutriEase is an AI-powered website designed to simplify personalized nutrition by offering tailored meal plans, calorie tracking, and interactive dashboards.
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
-                    <span className="text-sm text-gray-500">2023</span>
+                    <span className="text-sm text-gray-500">2024</span>
 
                     <motion.div whileHover={{ scale: 1.2 }}>
                       <a
                         onClick={() => {
                           window.open(
-                            "https://chatlify-d8oj.onrender.com/",
+                            "https://nutriwise.vercel.app/",
                             "_blank"
                           );
                         }}
@@ -454,14 +454,14 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>Website for a Government-Outsourced Car Scrapping Company.</p>
+                  <p>This is my 2nd year project.</p>
                 </div>
               }
             >
               <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
                 <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                   <Image
-                    src="/black-mining.jpg"
+                    src="/chatlify.jpg"
                     alt="thumbnail"
                     height="600"
                     width="1200"
@@ -470,19 +470,20 @@ export default function Projects() {
                 </div>
                 <div className="p-4">
                   <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
-                    Black Mining<span>⭐⭐⭐⭐</span>
+                    Chatlify<span>⭐⭐⭐</span>
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    Designed and implemented a professional, user-centric website to streamline car scrapping services for end-of-life vehicles, ensuring compliance with government standards and environmental regulations.
+                    A real-time communication platform designed to streamline
+                    interactions with responsive design and integrated websockets. It is a real-time chat application that allows users to chat.
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
-                    <span className="text-sm text-gray-500">2025</span>
+                    <span className="text-sm text-gray-500">2023</span>
 
                     <motion.div whileHover={{ scale: 1.2 }}>
                       <a
                         onClick={() => {
                           window.open(
-                            "https://black-mining-portfolio.vercel.app/",
+                            "https://chatlify-d8oj.onrender.com/",
                             "_blank"
                           );
                         }}
