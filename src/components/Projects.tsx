@@ -454,14 +454,14 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>This is my 2nd year project.</p>
+                  <p>This is where you can build in public.</p>
                 </div>
               }
             >
               <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
                 <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                   <Image
-                    src="/chatlify.jpg"
+                    src="/buildable.jpg"
                     alt="thumbnail"
                     height="600"
                     width="1200"
@@ -470,11 +470,10 @@ export default function Projects() {
                 </div>
                 <div className="p-4">
                   <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
-                    Chatlify<span>⭐⭐⭐</span>
+                    Buildable<span>⭐⭐⭐⭐⭐</span>
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    A real-time communication platform designed to streamline
-                    interactions with responsive design and integrated websockets. It is a real-time chat application that allows users to chat.
+                    Buildable is a modern platform for developers to showcase their projects and receive real-time feedback through ratings and reviews and for investors to see top projects in market.
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
                     <span className="text-sm text-gray-500">2023</span>
@@ -483,7 +482,7 @@ export default function Projects() {
                       <a
                         onClick={() => {
                           window.open(
-                            "https://chatlify-d8oj.onrender.com/",
+                            "https://buildable-omega.vercel.app/",
                             "_blank"
                           );
                         }}
