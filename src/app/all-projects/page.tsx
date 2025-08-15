@@ -721,6 +721,176 @@ export default function Projects() {
                         </div>
 
                     </div>
+
+                    <div className="flex flex-col lg:flex-row gap-6 justify-center mt-4 mb-4">
+                        {/* Project 1 */}
+                        <div className="w-full sm:w-80 mx-auto">
+                            <FollowerPointerCard
+                                title={
+                                    <div className="flex space-x-2 items-center">
+                                        <Image
+                                            src="/logo.png"
+                                            height="20"
+                                            width="20"
+                                            alt="thumbnail"
+                                            className="rounded-full border-2 border-white"
+                                        />
+                                        <p>A Robotic Simulation Platform.</p>
+                                    </div>
+                                }
+                            >
+                                <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                                    <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                                        <Image
+                                            src="/robo.jpg"
+                                            alt="thumbnail"
+                                            height="600"
+                                            width="1200"
+                                            className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                                        />
+                                    </div>
+                                    <div className="p-4">
+                                        <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
+                                            Robo Simulator<span>⭐⭐⭐⭐⭐⭐</span>
+                                        </h2>
+                                        <h2 className="font-normal my-4 text-sm text-zinc-500">
+                                            OpenDroids Robotics is a robotics simulation platform that allows users to design, simulate, and program robots in a virtual environment.
+                                        </h2>
+                                        <div className="flex flex-row justify-between items-center mt-10">
+                                            <span className="text-sm text-gray-500">2025</span>
+
+                                            <motion.div whileHover={{ scale: 1.2 }}>
+                                                <a
+                                                    onClick={() => {
+                                                        window.open(
+                                                            "https://robot-data-visualizer.vercel.app/robo-simulator",
+                                                            "_blank"
+                                                        );
+                                                    }}
+                                                    className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                                                >
+                                                    Visit it
+                                                </a>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </FollowerPointerCard>
+                        </div>
+
+
+                        {/* Project 2 */}
+
+                        <div className="w-full sm:w-80 mx-auto">
+                            <FollowerPointerCard
+                                title={
+                                    <div className="flex space-x-2 items-center">
+                                        <Image
+                                            src="/logo.png"
+                                            height="20"
+                                            width="20"
+                                            alt="thumbnail"
+                                            className="rounded-full border-2 border-white"
+                                        />
+                                        <p>Helped me find a good gift.</p>
+                                    </div>
+                                }
+                            >
+                                <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                                    <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                                        <Image
+                                            src="/gift.jpg"
+                                            alt="thumbnail"
+                                            height="600"
+                                            width="1200"
+                                            className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                                        />
+                                    </div>
+                                    <div className="p-4">
+                                        <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
+                                            Giftable AI<span>⭐⭐⭐⭐⭐</span>
+                                        </h2>
+                                        <h2 className="font-normal my-4 text-sm text-zinc-500">
+                                            Giftable AI is an AI-powered gift recommendation system that helps users find the perfect gift for their loved ones. Saved me a lot of time and effort.
+                                        </h2>
+                                        <div className="flex flex-row justify-between items-center mt-10">
+                                            <span className="text-sm text-gray-500">2024</span>
+
+                                            <motion.div whileHover={{ scale: 1.2 }}>
+                                                <a
+                                                    onClick={() => {
+                                                        window.open(
+                                                            "https://giftable-ai.vercel.app/",
+                                                            "_blank"
+                                                        );
+                                                    }}
+                                                    className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                                                >
+                                                    Visit it
+                                                </a>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </FollowerPointerCard>
+                        </div>
+
+                        {/* Project 3 */}
+
+                        <div className="w-full sm:w-80 mx-auto">
+                            <FollowerPointerCard
+                                title={
+                                    <div className="flex space-x-2 items-center">
+                                        <Image
+                                            src="/logo.png"
+                                            height="20"
+                                            width="20"
+                                            alt="thumbnail"
+                                            className="rounded-full border-2 border-white"
+                                        />
+                                        <p>A DSA Search Engine</p>
+                                    </div>
+                                }
+                            >
+                                <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
+                                    <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
+                                        <Image
+                                            src="/dsa.jpg"
+                                            alt="OpenMeet thumbnail"
+                                            height="600"
+                                            width="1200"
+                                            className="group-hover:scale-95 group-hover:rounded-2xl transform object-cover transition duration-200"
+                                        />
+                                    </div>
+                                    <div className="p-4">
+                                        <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
+                                            Search Engine <span>⭐⭐⭐⭐⭐</span>
+                                        </h2>
+                                        <h2 className="font-normal my-4 text-sm text-zinc-500">
+                                            DSA Search Engine is a search engine that helps users find the best DSA resources and practice questions. It&apos;s a great tool for students preparing DSA.
+                                        </h2>
+                                        <div className="flex flex-row justify-between items-center mt-10">
+                                            <span className="text-sm text-gray-500">2025</span>
+
+                                            <motion.div whileHover={{ scale: 1.2 }}>
+                                                <a
+                                                    onClick={() => {
+                                                        window.open(
+                                                            "https://dsa-search-engine-opal.vercel.app/",
+                                                            "_blank"
+                                                        );
+                                                    }}
+                                                    className="relative z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
+                                                >
+                                                    Visit it
+                                                </a>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </FollowerPointerCard>
+                        </div>
+                    </div>
                 </div>
 
             </div>
