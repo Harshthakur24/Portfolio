@@ -46,9 +46,7 @@ export default function Home() {
               <div className="w-full lg:w-[99.99%] lg:max-w-[620px] mx-auto">
                 <MessageMe />
               </div>
-              <div className="w-8/12 mx-auto lg:w-[0.1%] lg:max-w-[500px] ml-20">
-                <CardStackMessages />
-              </div>
+
             </div>
           </div>
           <Footer />

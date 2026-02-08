@@ -444,14 +444,14 @@ export default function Projects() {
                     alt="thumbnail"
                     className="rounded-full border-2 border-white"
                   />
-                  <p>Made to help students do well in their career.</p>
+                  <p>Made this project for My University</p>
                 </div>
               }
             >
               <div className="relative overflow-hidden h-full rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100">
                 <div className="w-full aspect-w-16 aspect-h-9 bg-gray-100 rounded-tr-lg rounded-tl-lg overflow-hidden relative">
                   <Image
-                    src="/velocity.jpg"
+                    src="/dsa-dashboard.jpeg"
                     alt="thumbnail"
                     height="600"
                     width="1200"
@@ -460,12 +460,10 @@ export default function Projects() {
                 </div>
                 <div className="p-4">
                   <h2 className="font-bold my-4 text-lg text-zinc-700 flex justify-between items-center">
-                    Velocity<span>⭐⭐⭐</span>
+                    DSA Dashboard<span>⭐⭐⭐⭐⭐</span>
                   </h2>
                   <h2 className="font-normal my-4 text-sm text-zinc-500">
-                    A career growth app that empowers engineering students with
-                    tools and resources to accelerate skill development and
-                    professional advancement.
+                    DSA Dashboard is a dashboard that helps students prepare for their DSA interviews. It&apos;s a great tool for students of MRU preparing DSA.
                   </h2>
                   <div className="flex flex-row justify-between items-center mt-10">
                     <span className="text-sm text-gray-500">2024</span>
@@ -474,7 +472,7 @@ export default function Projects() {
                       <a
                         onClick={() => {
                           window.open(
-                            "https://velocity-sign.vercel.app/",
+                            "https://dsa-dashboard-azure.vercel.app/",
                             "_blank"
                           );
                         }}
